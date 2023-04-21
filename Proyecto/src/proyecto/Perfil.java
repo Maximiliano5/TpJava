@@ -1,14 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto;
+import java.util.TreeMap;
 
-/**
- *
- * @author Pc
- */
 public class Perfil {
-    
+    private String Nombre;
+    private int Seguidores;
+    private int Seguidos;
+    private int Publicaciones;
+    private TreeMap<Integer, Publicacion> treeMap;  
+
+    public Perfil(String Nombre, int Seguidores, int Seguidos, int Publicaciones, TreeMap<Integer, Publicacion> treeMap) {
+        this.Nombre = Nombre;
+        this.Seguidores = Seguidores;
+        this.Seguidos = Seguidos;
+        this.Publicaciones = Publicaciones;
+        this.treeMap = treeMap;
+    }
 }
