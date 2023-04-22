@@ -23,6 +23,7 @@ public class Imagen extends Publicacion implements Filtrable{
         //hay que redefinir el metodo
     }
 
+    //getters
     public int getResolucion() {
         return Resolucion;
     }
