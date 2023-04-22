@@ -21,5 +21,22 @@ public class Imagen extends Publicacion implements Filtrable{
     @Override
     public void Filtro() {
         //hay que redefinir el metodo
-    }  
+    }
+
+    public int getResolucion() {
+        return Resolucion;
+    }
+
+    public int getAlto() {
+        return Alto;
+    }
+
+    public int getAncho() {
+        return Ancho;
+    }
+
+    public Boolean getFiltro() {
+        return Filtro;
+    }
+    
 }
