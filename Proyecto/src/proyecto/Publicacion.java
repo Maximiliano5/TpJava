@@ -6,8 +6,8 @@ public class Publicacion {
     private String nombre;
     private int fecha; //aaaammdd
     private int cantMG;
-    private ArrayList<String> etiquetas = new ArrayList<String>(50);
-    private ArrayList<String> comentarios = new ArrayList<String>(50);
+    private ArrayList<String> etiquetas;
+    private ArrayList<String> comentarios;
 
     //Constructor
     public Publicacion(String n, int f, int cant, ArrayList e, ArrayList com){
@@ -18,20 +18,24 @@ public class Publicacion {
         comentarios=com;
     }
 
-    //Metodos
-    public String obtNombre(){
+    //Getters
+    public String getNombre() {
         return nombre;
     }
-    public int obtFecha(){
+
+    public int getFecha() {
         return fecha;
     }
-    public int obtCantMG(){
+
+    public int getCantMG() {
         return cantMG;
     }
-    public ArrayList obtEtiquetas(){
+
+    public ArrayList<String> getEtiquetas() {
         return etiquetas;
     }
-    public ArrayList obtComentarios(){
+
+    public ArrayList<String> getComentarios() {
         return comentarios;
     }
 }

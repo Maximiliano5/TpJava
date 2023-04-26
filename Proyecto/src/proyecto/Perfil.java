@@ -1,5 +1,5 @@
 package proyecto;
-import java.util.TreeMap;
+import java.util.List;
 
 public class Perfil {
     private String Nombre;
@@ -7,11 +7,11 @@ public class Perfil {
     private int Seguidores;
     private int Seguidos;
     private int Publicaciones;
-    private TreeMap<Integer, Publicacion> PubliMap;  
-    private TreeMap<Integer, Album> AlbuMap;
+    private List<Publicacion> PubliMap;  
+    private List<Album> AlbuMap;
     
     //constructor
-    public Perfil(String Nombre, String Apellido, int Seguidores, int Seguidos, int Publicaciones, TreeMap<Integer, Publicacion> PubliMap, TreeMap<Integer, Album> AlbuMap) {
+    public Perfil(String Nombre, String Apellido, int Seguidores, int Seguidos, int Publicaciones, List<Publicacion> PubliMap, List<Album> AlbuMap) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Seguidores = Seguidores;
@@ -20,6 +20,7 @@ public class Perfil {
         this.PubliMap = PubliMap;
         this.AlbuMap = AlbuMap;
     }
+
     
     //getters
     public String getNombre() {
@@ -41,25 +42,4 @@ public class Perfil {
     public int getPublicaciones() {
         return Publicaciones;
     }
-    
-    //setters
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
-    }
-
-    public void setSeguidores(int Seguidores) {
-        this.Seguidores = Seguidores;
-    }
-
-    public void setSeguidos(int Seguidos) {
-        this.Seguidos = Seguidos;
-    }
-
-    public void setPublicaciones(int Publicaciones) {
-        this.Publicaciones = Publicaciones;
-    } 
 }
