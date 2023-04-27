@@ -27,7 +27,7 @@ public class Audio extends Publicacion implements durable{
     public int getTiempoact(){ 
         return tiempoact; }
     
-    public boolean getReproduciendo(){
+    public boolean isReproduciendo(){
         return reproduciendo;
     }
 
