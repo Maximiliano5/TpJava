@@ -32,7 +32,7 @@ private  boolean reproduciendo;
     public void pausar(){
         reproduciendo=false;}
     
-    public void reanudar(){
+    public void renaudar(){
         reproduciendo=true;}
 
     //getters
