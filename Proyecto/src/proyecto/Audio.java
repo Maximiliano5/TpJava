@@ -11,7 +11,6 @@ public class Audio extends Publicacion implements Durable{
     private boolean detener; //Sí o no
 
     //constructor
-
     public Audio(int duracion, int velbits, boolean avanzar, boolean reanudar, boolean detener, String n, int f, int cant, ArrayList e, ArrayList com) {
         super(n, f, cant, e, com);
         this.duracion = duracion;
@@ -22,22 +21,28 @@ public class Audio extends Publicacion implements Durable{
     }
        
 
-    //Metodos
-    public int obtDuracion(){
+    //Getters
+    public int getDuracion() {
         return duracion;
     }
-    public int obtVelbits(){
+
+    public int getVelbits() {
         return velbits;
     }
-    public boolean obtAvanzar(){
+
+    public boolean isAvanzar() {
         return avanzar;
     }
-    public boolean obtRenaudar(){
+
+    public boolean isReanudar() {
         return reanudar;
     }
-    public boolean obtDetener(){
+
+    public boolean isDetener() {
         return detener;
     }
+    
+    //Metodos
     public void avanzar(){}
     public void reanudar(){}
     public void pausar(){}

@@ -21,7 +21,6 @@ public class Perfil {
         this.AlbuMap = AlbuMap;
     }
 
-    
     //getters
     public String getNombre() {
         return Nombre;
