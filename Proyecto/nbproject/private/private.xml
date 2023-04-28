@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Imagen.java</file>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Main.java</file>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Filtrable.java</file>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Durable.java</file>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Publicacion.java</file>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Audio.java</file>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Album.java</file>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Video.java</file>
-            <file>file:/C:/ProyectoJava/Proyecto/src/proyecto/Perfil.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Album.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Main.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Imagen.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Audio.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Video.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Filtrable.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Durable.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Perfil.java</file>
+            <file>file:/C:/ProyectoJava/Proyecto/src/Logica/Publicacion.java</file>
         </group>
     </open-files>
 </project-private>
