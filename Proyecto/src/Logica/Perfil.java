@@ -1,4 +1,4 @@
-package proyecto;
+package Logica;
 import java.util.List;
 
 public class Perfil {
@@ -6,19 +6,17 @@ public class Perfil {
     private String Apellido;
     private int Seguidores;
     private int Seguidos;
-    private int Publicaciones;
-    private List<Publicacion> PubliMap;  
-    private List<Album> AlbuMap;
+    private List<Publicacion> pubList;  
+    private List<Album> albumList;
     
     //constructor
-    public Perfil(String Nombre, String Apellido, int Seguidores, int Seguidos, int Publicaciones, List<Publicacion> PubliMap, List<Album> AlbuMap) {
+    public Perfil(String Nombre, String Apellido, int Seguidores, int Seguidos, List<Publicacion> pubList, List<Album> albumList) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Seguidores = Seguidores;
         this.Seguidos = Seguidos;
-        this.Publicaciones = Publicaciones;
-        this.PubliMap = PubliMap;
-        this.AlbuMap = AlbuMap;
+        this.pubList = pubList;
+        this.albumList = albumList;
     }
 
     //getters
@@ -38,7 +36,11 @@ public class Perfil {
         return Seguidos;
     }
 
-    public int getPublicaciones() {
-        return Publicaciones;
+    public List<Publicacion> getPubList() {
+        return pubList;
     }
+
+    public List<Album> getAlbumList() {
+        return albumList;
+    } 
 }

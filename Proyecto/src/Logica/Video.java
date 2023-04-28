@@ -1,5 +1,4 @@
-
-package proyecto;
+package Logica;
 
 import java.util.ArrayList;
 
