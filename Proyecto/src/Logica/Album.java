@@ -1,22 +1,19 @@
-
 package Logica;
-
 import java.util.List;
 
 
-
 public class Album {
-    
     private String nombreAlbum;//Criterio para separar publicaciones  
     private  List<Publicacion> Lpubli;
     private  List<Album> Lalbum;
-
+     
+    //Constructor
     public Album(String nombreAlbum) {
         this.nombreAlbum = nombreAlbum;
     }
 
   
-    
+    //Getters
     public String getNombreAlbum() {
         return nombreAlbum;
     }
@@ -28,7 +25,8 @@ public class Album {
     public List<Album> getLalbum() {
         return Lalbum;
     }
-
+    
+    //Setters
     public void setNombreAlbum(String nombreAlbum) {
         this.nombreAlbum = nombreAlbum;
     }
@@ -39,13 +37,5 @@ public class Album {
 
     public void setLalbum(List<Album> Lalbum) {
         this.Lalbum = Lalbum;
-    }
-
-    
-    
-
-  
-    
-    
-    
+    }   
 }
