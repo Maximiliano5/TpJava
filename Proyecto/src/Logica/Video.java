@@ -1,21 +1,15 @@
 package Logica;
 
-import java.util.ArrayList;
+public class Video extends Publicacion implements Durable{
+   private int duracion;//segundos
+   private int resolucion;
+   private int fps;
+   private  int tiempoact;
+   private  boolean reproduciendo;
 
-public class Video extends Publicacion implements Durable
-{
-private int duracion;//segundos
-private int resolucion;
-private int fps;
-private  int tiempoact;
-private  boolean reproduciendo;
-
-    public Video(String n, int f, int cant, ArrayList e, ArrayList com) {
-        super(n, f, cant, e, com);
-    }
 
     //constructor
-    public Video(int duracion, int resolucion, int fps, int tiempoact, boolean reproduciendo, String n, int f, int cant, ArrayList e, ArrayList com) {
+    public Video(int duracion, int resolucion, int fps, int tiempoact, boolean reproduciendo, String n, int f, int cant, int e, int com) {
         super(n, f, cant, e, com);
         this.duracion = duracion;
         this.resolucion = resolucion;
@@ -24,14 +18,17 @@ private  boolean reproduciendo;
         this.reproduciendo = reproduciendo;
     }
 
-
+   //Metodos de la interfaz
+   @Override
     public void avanzar(){
         tiempoact+=5;}
     
+   @Override
     public void pausar(){
         reproduciendo=false;}
     
-    public void renaudar(){
+   @Override
+    public void reanudar(){
         reproduciendo=true;}
 
     //getters
@@ -73,8 +70,5 @@ private  boolean reproduciendo;
 
     public void setReproduciendo(boolean reproduciendo) {
         this.reproduciendo = reproduciendo;
-    }
-    
-    
-    
+    }   
 }

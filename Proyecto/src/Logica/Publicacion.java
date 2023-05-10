@@ -1,16 +1,15 @@
 
 package Logica;
-import java.util.*;
 
 public class Publicacion {
     private String nombre;
     private int fecha; //aaaammdd
     private int cantMG;
-    private ArrayList<String> etiquetas;
-    private ArrayList<String> comentarios;
+    private int etiquetas;
+    private int comentarios;
 
     //Constructor
-    public Publicacion(String n, int f, int cant, ArrayList e, ArrayList com){
+    public Publicacion(String n, int f, int cant, int e, int com){
         nombre=n;
         fecha=f;
         cantMG=cant;
@@ -31,11 +30,11 @@ public class Publicacion {
         return cantMG;
     }
 
-    public ArrayList<String> getEtiquetas() {
+    public int getEtiquetas() {
         return etiquetas;
     }
 
-    public ArrayList<String> getComentarios() {
+    public int getComentarios() {
         return comentarios;
     }
 }

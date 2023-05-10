@@ -1,9 +1,8 @@
-
 package Logica;
 
 
 public interface Durable {
-    void avanzar();
-    void reanudar();
-    void pausar();
+    public void avanzar();
+    public void reanudar();
+    public void pausar();
 }
