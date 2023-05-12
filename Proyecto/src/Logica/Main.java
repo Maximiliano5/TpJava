@@ -1,21 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Logica;
 
-/**
- *
- * @author Pc
- */
+import Datos.Handler;
+import java.io.File;
+import java.io.IOException;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import org.xml.sax.SAXException;
+
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+       SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+       SAXParser saxParser = saxParserFactory.newSAXParser();
+       File Arch = new File("datos.xml");
+       Handler Version = new Handler();
+       saxParser.parse(Arch,Version);
     }
     
 }
