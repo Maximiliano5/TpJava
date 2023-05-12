@@ -31,9 +31,27 @@ public class Audio extends Publicacion implements Durable{
         return velbits;
     }
     public int getTiempoact(){ 
-        return tiempoact; }
+        return tiempoact; 
+    }
     
     public boolean isReproduciendo(){
         return reproduciendo;
-    }  
+    }
+    
+    //Setters
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public void setVelbits(int velbits) {
+        this.velbits = velbits;
+    }
+
+    public void setTiempoact(int tiempoact) {
+        this.tiempoact = tiempoact;
+    }
+
+    public void setReproduciendo(boolean reproduciendo) {
+        this.reproduciendo = reproduciendo;
+    }    
 }

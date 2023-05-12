@@ -36,5 +36,26 @@ public class Publicacion {
     public int getComentarios() {
         return comentarios;
     }
+    
+    //Setters
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setFecha(int fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setCantMG(int cantMG) {
+        this.cantMG = cantMG;
+    }
+
+    public void setEtiquetas(int etiquetas) {
+        this.etiquetas = etiquetas;
+    }
+
+    public void setComentarios(int comentarios) {
+        this.comentarios = comentarios;
+    } 
 }
 

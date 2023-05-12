@@ -37,5 +37,22 @@ public class Imagen extends Publicacion implements Filtrable{
 
     public Boolean getFiltro() {
         return Filtro;
-    }  
+    } 
+    
+    //Setters
+    public void setResolucion(int Resolucion) {
+        this.Resolucion = Resolucion;
+    }
+
+    public void setAlto(int Alto) {
+        this.Alto = Alto;
+    }
+
+    public void setAncho(int Ancho) {
+        this.Ancho = Ancho;
+    }
+
+    public void setFiltro(Boolean Filtro) {
+        this.Filtro = Filtro;
+    } 
 }

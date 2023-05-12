@@ -43,4 +43,29 @@ public class Perfil {
     public List<Album> getAlbumList() {
         return albumList;
     } 
+    
+    //Setters
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
+    }
+
+    public void setSeguidores(int Seguidores) {
+        this.Seguidores = Seguidores;
+    }
+
+    public void setSeguidos(int Seguidos) {
+        this.Seguidos = Seguidos;
+    }
+
+    public void setPubList(List<Publicacion> pubList) {
+        this.pubList = pubList;
+    }
+
+    public void setAlbumList(List<Album> albumList) {
+        this.albumList = albumList;
+    }  
 }
