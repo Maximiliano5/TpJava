@@ -7,7 +7,7 @@ public class Imagen extends Publicacion implements Filtrable{
     private Boolean Filtro;
 
     //constructor
-    public Imagen(int Resolucion, int Alto, int Ancho, Boolean Filtro, String n, int f, int cant, int e, int com) {
+    public Imagen(int Resolucion, int Alto, int Ancho, Boolean Filtro, String n, long f, int cant, int e, int com) {
         super(n, f, cant, e, com);
         this.Resolucion = Resolucion;
         this.Alto = Alto;

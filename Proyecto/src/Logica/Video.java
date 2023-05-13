@@ -9,7 +9,7 @@ public class Video extends Publicacion implements Durable{
 
 
     //constructor
-    public Video(int duracion, int resolucion, int fps, int tiempoact, boolean reproduciendo, String n, int f, int cant, int e, int com) {
+    public Video(int duracion, int resolucion, int fps, int tiempoact, boolean reproduciendo, String n, long f, int cant, int e, int com) {
         super(n, f, cant, e, com);
         this.duracion = duracion;
         this.resolucion = resolucion;

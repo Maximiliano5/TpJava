@@ -2,13 +2,13 @@ package Logica;
 
 public class Publicacion {
     private String nombre;
-    private int fecha; //aaaammdd
+    private long fecha; //aaaammdd
     private int cantMG;
     private int etiquetas;
     private int comentarios;
 
     //Constructor
-    public Publicacion(String n, int f, int cant, int e, int com){
+    public Publicacion(String n, long f, int cant, int e, int com){
         nombre=n;
         fecha=f;
         cantMG=cant;
@@ -21,7 +21,7 @@ public class Publicacion {
         return nombre;
     }
 
-    public int getFecha() {
+    public long getFecha() {
         return fecha;
     }
 
@@ -42,7 +42,7 @@ public class Publicacion {
         this.nombre = nombre;
     }
 
-    public void setFecha(int fecha) {
+    public void setFecha(long fecha) {
         this.fecha = fecha;
     }
 
@@ -57,5 +57,33 @@ public class Publicacion {
     public void setComentarios(int comentarios) {
         this.comentarios = comentarios;
     } 
+
+    public void setDuracion(int parseInt) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setResolucion(int parseInt) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setFps(int parseInt) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void SetAlto(int parseInt) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setAncho(int parseInt) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setFiltro(boolean parseBoolean) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setVelocidad(int parseInt) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 

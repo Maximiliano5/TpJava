@@ -1,6 +1,5 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <Publicaciones>
-  <videos>
     <video>
       <Nombre>Playa</Nombre>
       <Fecha>20230122</Fecha>
@@ -41,8 +40,6 @@
       <Resolucion>60</Resolucion>
       <Fps>60</Fps>
     </video>
-  </videos>
-  <Imagenes>
     <Imagen>
       <Nombre>River Boca</Nombre>
       <Fecha>20230507</Fecha>
@@ -51,7 +48,7 @@
       <Comentarios>5</Comentarios>
       <Resolucion>50</Resolucion>
       <Alto>70</Alto>
-      <Ancho>80<Ancho>
+      <Ancho>80</Ancho>
       <Filtro>si</Filtro>
     </Imagen>
     <Imagen>
@@ -62,7 +59,7 @@
       <Comentarios>3</Comentarios>
       <Resolucion>80</Resolucion>
       <Alto>90</Alto>
-      <Ancho>80<Ancho>
+      <Ancho>80</Ancho>
       <Filtro>si</Filtro>
     </Imagen>
     <Imagen>
@@ -73,7 +70,7 @@
       <Comentarios>0</Comentarios>
       <Resolucion>50</Resolucion>
       <Alto>50</Alto>
-      <Ancho>30<Ancho>
+      <Ancho>30</Ancho>
       <Filtro>si</Filtro>
     </Imagen>
     <Imagen>
@@ -84,7 +81,7 @@
       <Comentarios>3</Comentarios>
       <Resolucion>100</Resolucion>
       <Alto>90</Alto>
-      <Ancho>70<Ancho>
+      <Ancho>70</Ancho>
       <Filtro>si</Filtro>
     </Imagen>
     <Imagen>
@@ -95,7 +92,7 @@
       <Comentarios>7</Comentarios>
       <Resolucion>40</Resolucion>
       <Alto>90</Alto>
-      <Ancho>30<Ancho>
+      <Ancho>30</Ancho>
       <Filtro>no</Filtro>
     </Imagen>
     <Imagen>
@@ -106,7 +103,7 @@
       <Comentarios>7</Comentarios>
       <Resolucion>90</Resolucion>
       <Alto>90</Alto>
-      <Ancho>80<Ancho>
+      <Ancho>80</Ancho>
       <Filtro>no</Filtro>
     </Imagen>
     <Imagen>
@@ -117,7 +114,7 @@
       <Comentarios>988</Comentarios>
       <Resolucion>100</Resolucion>
       <Alto>80</Alto>
-      <Ancho>70<Ancho>
+      <Ancho>70</Ancho>
       <Filtro>si</Filtro>
     </Imagen>
     <Imagen>
@@ -128,7 +125,7 @@
       <Comentarios>0</Comentarios>
       <Resolucion>90</Resolucion>
       <Alto>90</Alto>
-      <Ancho>80<Ancho>
+      <Ancho>80</Ancho>
       <Filtro>si</Filtro>
     </Imagen>
     <Imagen>
@@ -139,11 +136,9 @@
       <Comentarios>6</Comentarios>
       <Resolucion>20</Resolucion>
       <Alto>90</Alto>
-      <Ancho>80<Ancho>
+      <Ancho>80</Ancho>
       <Filtro>no</Filtro>
     </Imagen>
-  </Imagenes>
-  <Audios>
     <Audio>
       <Nombre>Informacion</Nombre>
       <Fecha>20230709</Fecha>
@@ -207,5 +202,4 @@
       <Duracion>9</Duracion>
       <Velocidad>9</Velocidad>
     </Audio>
-  </Audios>
 </Publicaciones>
