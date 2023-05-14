@@ -1,22 +1,19 @@
-
-package proyecto;
-
+package Logica;
 import java.util.List;
 
 
-
 public class Album {
-    
     private String nombreAlbum;//Criterio para separar publicaciones  
     private  List<Publicacion> Lpubli;
-    private  List<Album> Lalbum;
-
+    private  List<Album> subAlbum;
+     
+    //Constructor
     public Album(String nombreAlbum) {
         this.nombreAlbum = nombreAlbum;
     }
 
   
-    
+    //Getters
     public String getNombreAlbum() {
         return nombreAlbum;
     }
@@ -26,9 +23,10 @@ public class Album {
     }
 
     public List<Album> getLalbum() {
-        return Lalbum;
+        return subAlbum;
     }
-
+    
+    //Setters
     public void setNombreAlbum(String nombreAlbum) {
         this.nombreAlbum = nombreAlbum;
     }
@@ -38,14 +36,30 @@ public class Album {
     }
 
     public void setLalbum(List<Album> Lalbum) {
-        this.Lalbum = Lalbum;
+        this.subAlbum = Lalbum;
+    }   
+    public void agregaSubAlbum(Album Album)
+    {
+        subAlbum.add(Album);
     }
-
-    
-    
-
-  
-    
-    
+    public void agregaPublicacion(Publicacion p)
+    {
+        Lpubli.add(p);  
+    }
+    public void eliminarSubAlbum(Album a)
+    {
+        subAlbum.remove(a);
+    }
+    public void eliminarPublicacion(Publicacion p)
+    {
+        Lpubli.remove(p);
+    }
+     public void eliminar()//elimina de forma recursiva los subalbumes
+     {
+        for (Album auxAlbum : subAlbum) {
+            auxAlbum.eliminar();
+        }
+        subAlbum.clear();
+    }
     
 }
