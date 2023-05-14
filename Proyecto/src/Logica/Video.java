@@ -1,4 +1,3 @@
-<<<<<<< HEAD:Proyecto/src/Logica/Video.java
 package Logica;
 
 public class Video extends Publicacion implements Durable{
@@ -72,19 +71,4 @@ public class Video extends Publicacion implements Durable{
     public void setReproduciendo(boolean reproduciendo) {
         this.reproduciendo = reproduciendo;
     }   
-=======
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package proyecto;
-
-/**
- *
- * @author Pc
- */
-public class Video {
-    
->>>>>>> 6f1a9af5843337788159ea1c4acd7010bfc9e3cf:Proyecto/src/proyecto/Video.java
 }
