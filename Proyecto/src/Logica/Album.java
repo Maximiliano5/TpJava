@@ -60,6 +60,5 @@ public class Album {
             auxAlbum.eliminar();
         }
         subAlbum.clear();
-    }
-    
+    }  
 }
