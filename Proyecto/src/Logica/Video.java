@@ -1,11 +1,12 @@
 package Logica;
 
-public class Video extends Publicacion implements Durable{
+public class Video extends Publicacion implements Durable, Filtrable{
    private int duracion;//segundos
    private int resolucion;
    private int fps;
    private  int tiempoact;
    private  boolean reproduciendo;
+   private boolean Filtro;
 
 
     //constructor
@@ -20,16 +21,49 @@ public class Video extends Publicacion implements Durable{
 
    //Metodos de la interfaz
    @Override
-    public void avanzar(){
-        tiempoact+=5;}
+    public void avanzar(int seg)
+    {
+        if (tiempoact+seg < duracion){
+            tiempoact=tiempoact+seg;
+        } else
+        {
+            tiempoact=duracion;
+        }
+    }
     
    @Override
-    public void pausar(){
-        reproduciendo=false;}
+    public void renaudar(int seg)
+    {
+        if (seg < tiempoact){
+            tiempoact=tiempoact-seg;
+        } else
+        {
+            tiempoact=0;
+        }
+    }
     
    @Override
-    public void reanudar(){
-        reproduciendo=true;}
+    public void pausar(boolean res) //respuesta si poner filtro: sí o no
+    {
+        if (res)
+        {
+            reproduciendo=true;
+        } else
+        {
+            reproduciendo=false;
+        }
+    }
+   
+   public void Filtro(boolean res) //respuesta si poner filtro: sí o no
+    {
+        if (res)
+        {
+            Filtro=true;
+        } else
+        {
+            Filtro=false;
+        }
+    }
 
     //getters
     public int getDuracion() {
