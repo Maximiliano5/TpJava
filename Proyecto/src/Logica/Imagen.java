@@ -18,8 +18,15 @@ public class Imagen extends Publicacion implements Filtrable{
 
     //metodo de la interfaz
     @Override
-    public void Filtro() {
-        //hay que redefinir el metodo
+    public void Filtro(boolean res) //respuesta si poner filtro: sí o no
+    {
+        if (res)
+        {
+            Filtro=true;
+        } else
+        {
+            Filtro=false;
+        }
     }
 
     //getters
