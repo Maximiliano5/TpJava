@@ -17,11 +17,36 @@ public class Audio extends Publicacion implements Durable{
     
     //Metodos de la interfaz
     @Override
-    public void avanzar(){}
+    public void avanzar(int seg)
+    {
+        if (tiempoact+seg < duracion){
+            tiempoact=tiempoact+seg;
+        } else
+        {
+            tiempoact=duracion;
+        }
+    }
     @Override
-    public void reanudar(){}
+    public void renaudar(int seg)
+    {
+        if (seg < tiempoact){
+            tiempoact=tiempoact-seg;
+        } else
+        {
+            tiempoact=0;
+        }
+    }
     @Override
-    public void pausar(){}
+    public void pausar(boolean res) //respuesta si poner filtro: sí o no
+    {
+        if (res)
+        {
+            reproduciendo=true;
+        } else
+        {
+            reproduciendo=false;
+        }
+    }
 
     //Getters
     public int getDuracion(){
