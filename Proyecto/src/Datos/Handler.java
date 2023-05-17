@@ -73,7 +73,7 @@ public class Handler extends DefaultHandler{
         super.startElement(uri, localName, qName, attributes); //To change body of generated methods, choose Tools | Templates.
         switch(qName){
             case "video":
-                Publica = new Video(0,0,0,0,false,"sin",0,0,0,0);
+                Publica = new Video(0,0,0,0,false,false,"sin",0,0,0,0);
                 Publicaciones.add(Publica);
                 break;
             case "Imagen":

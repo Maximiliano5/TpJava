@@ -1,35 +1,61 @@
 package Logica;
 
-public class Video extends Publicacion implements Durable{
+public class Video extends Publicacion implements Durable,Filtrable{
    private int duracion;//segundos
    private int resolucion;
    private int fps;
    private  int tiempoact;
    private  boolean reproduciendo;
+   private boolean Filtro;
 
 
     //constructor
-    public Video(int duracion, int resolucion, int fps, int tiempoact, boolean reproduciendo, String n, long f, int cant, int e, int com) {
+    public Video(int duracion, int resolucion, int fps, int tiempoact, boolean reproduciendo, boolean Filtro, String n, long f, int cant, int e, int com){
         super(n, f, cant, e, com);
         this.duracion = duracion;
         this.resolucion = resolucion;
         this.fps = fps;
-        this.tiempoact = 0;
+        this.tiempoact = tiempoact;
         this.reproduciendo = reproduciendo;
+        this.Filtro = Filtro;
     }
 
-   //Metodos de la interfaz
-   @Override
-    public void avanzar(){
-        tiempoact+=5;}
+    //Metodos de la interfaz
+    @Override
+    public void avanzar(int seg) {
+        if (tiempoact+seg < duracion){
+            tiempoact=tiempoact+seg;
+        } else
+        {
+            tiempoact=duracion;
+        }
+    }
     
    @Override
-    public void pausar(){
-        reproduciendo=false;}
+    public void pausar(boolean res){ //respuesta si poner filtro: sí o no
+        if (res){
+            reproduciendo=true;
+        }else{
+            reproduciendo=false;
+        }
+    }
     
    @Override
-    public void reanudar(){
-        reproduciendo=true;}
+    public void reanudar(int seg){
+        if (seg < tiempoact){
+            tiempoact=tiempoact-seg;
+        }else{
+           tiempoact=0;
+        }
+    }
+   @Override
+    public void Filtro(boolean res){ //respuesta si poner filtro: sí o no
+        if (res){
+            Filtro=true;
+        } else{
+            Filtro=false;
+        }
+    }
 
     //getters
     public int getDuracion() {
@@ -51,6 +77,11 @@ public class Video extends Publicacion implements Durable{
     public boolean isReproduciendo() {
         return reproduciendo;
     }
+
+    public boolean isFiltro() {
+        return Filtro;
+    }
+    
     //setters
     public void setDuracion(int duracion) {
         this.duracion = duracion;
@@ -70,5 +101,10 @@ public class Video extends Publicacion implements Durable{
 
     public void setReproduciendo(boolean reproduciendo) {
         this.reproduciendo = reproduciendo;
-    }   
+    } 
+
+    public void setFiltro(boolean Filtro) {
+        this.Filtro = Filtro;
+    }
+    
 }

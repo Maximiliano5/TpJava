@@ -27,7 +27,7 @@ public class Audio extends Publicacion implements Durable{
         }
     }
     @Override
-    public void renaudar(int seg)
+    public void reanudar(int seg)
     {
         if (seg < tiempoact){
             tiempoact=tiempoact-seg;
@@ -37,13 +37,10 @@ public class Audio extends Publicacion implements Durable{
         }
     }
     @Override
-    public void pausar(boolean res) //respuesta si poner filtro: sí o no
-    {
-        if (res)
-        {
+    public void pausar(boolean res){ //respuesta si poner filtro: sí o no
+        if (res){
             reproduciendo=true;
-        } else
-        {
+        } else{
             reproduciendo=false;
         }
     }

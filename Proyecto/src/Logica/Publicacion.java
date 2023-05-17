@@ -58,32 +58,18 @@ public class Publicacion {
         this.comentarios = comentarios;
     } 
 
-    public void setDuracion(int parseInt) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void setDuracion(int parseInt) {}
 
-    public void setResolucion(int parseInt) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void setResolucion(int parseInt) {}
 
-    public void setFps(int parseInt) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void setFps(int parseInt) {}
 
-    public void SetAlto(int parseInt) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void SetAlto(int parseInt) {}
 
-    public void setAncho(int parseInt) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void setAncho(int parseInt) {}
 
-    public void setFiltro(boolean parseBoolean) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void setFiltro(boolean parseBoolean) {}
 
-    public void setVelocidad(int parseInt) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void setVelocidad(int parseInt) {}
 }
 

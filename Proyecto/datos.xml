@@ -9,6 +9,7 @@
       <Duracion>20</Duracion>
       <Resolucion>20</Resolucion>
       <Fps>60</Fps>
+      <Filtro>no</Filtro>
     </video>
     <video>
       <Nombre>Mar</Nombre>
@@ -19,6 +20,7 @@
       <Duracion>6</Duracion>
       <Resolucion>40</Resolucion>
       <Fps>66</Fps>
+      <Filtro>no</Filtro>
     </video>
     <video>
       <Nombre>Fiesta</Nombre>
@@ -29,6 +31,7 @@
       <Duracion>8</Duracion>
       <Resolucion>66</Resolucion>
       <Fps>60</Fps>
+      <Filtro>no</Filtro>
     </video>
     <video>
       <Nombre>Futbol</Nombre>
@@ -39,6 +42,7 @@
       <Duracion>70</Duracion>
       <Resolucion>60</Resolucion>
       <Fps>60</Fps>
+      <Filtro>si</Filtro>
     </video>
     <Imagen>
       <Nombre>River Boca</Nombre>

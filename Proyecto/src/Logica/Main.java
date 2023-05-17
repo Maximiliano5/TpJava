@@ -4,6 +4,8 @@ import Datos.Handler;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.TreeSet;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -11,23 +13,37 @@ import org.xml.sax.SAXException;
 
 
 public class Main {
-
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+    public static ArrayList<Publicacion> Lista;
+    public static ArrayList<Publicacion> ListaOrd;
+    public static void CargaDatos() throws SAXException, IOException, ParserConfigurationException{
        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
        SAXParser saxParser = saxParserFactory.newSAXParser();
        File Arch = new File("datos.xml");
        Handler Version = new Handler();
        saxParser.parse(Arch,Version);
-       ArrayList<Publicacion> P = Version.getPublicaciones(); //El arraylist con los objetos esta en el arraylist "P"
+       Lista = Version.getPublicaciones();   
+    }
+    public static void OrdenaDatos(){
+        TreeSet<Publicacion> personasOrdenadas = new TreeSet<>(Comparator.comparing(Publicacion::getNombre));
+        personasOrdenadas.addAll(Lista);
+        ListaOrd.addAll(personasOrdenadas);
+        
+    }
+
+    public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException{
+       Lista = new ArrayList<>();
+       ListaOrd = new ArrayList<>();
+       CargaDatos();
+       OrdenaDatos();
        ArrayList<Album> A = null;
-       Perfil objPerfil = new Perfil("Pepe","Coin",1000,900,P,A);
+       Perfil objPerfil = new Perfil("Pepe","Gomez",1000,900,ListaOrd,A);//Crea Objeto Perfil y carga el constructor con el Arraylist ya ordenado
        
-       //for(int i=0; i<P.size();i++){
-       //  System.out.println(P.get(i).getNombre());
-       //  System.out.println(P.get(i).getFecha());
-       //  System.out.println(P.get(i).getCantMG());
-       //  System.out.println(P.get(i).getComentarios());
-       //  System.out.println(P.get(i).getEtiquetas());
+       //for(int i=0; i<ListaOrd.size(); i++){
+         //System.out.println(ListaOrd.get(i).getNombre());
+         //System.out.println(ListaOrd.get(i).getFecha());
+         //System.out.println(ListaOrd.get(i).getCantMG());
+         //System.out.println(ListaOrd.get(i).getComentarios());
+         //System.out.println(ListaOrd.get(i).getEtiquetas());
        //}
     }
     
