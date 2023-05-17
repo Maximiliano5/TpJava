@@ -1,6 +1,5 @@
 package Clases;
 
-import Clases.Publicacion;
 import Interfaces.Filtrable;
 
 public class Imagen extends Publicacion implements Filtrable{

@@ -1,6 +1,5 @@
 package Clases;
 
-import Clases.Publicacion;
 import Interfaces.Durable;
 
 public class Audio extends Publicacion implements Durable{
