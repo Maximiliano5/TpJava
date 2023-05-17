@@ -1,4 +1,8 @@
-package Logica;
+package Clases;
+
+import Clases.Publicacion;
+import Interfaces.Durable;
+import Interfaces.Filtrable;
 
 public class Video extends Publicacion implements Durable,Filtrable{
    private int duracion;//segundos

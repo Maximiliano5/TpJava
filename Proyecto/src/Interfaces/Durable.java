@@ -1,4 +1,4 @@
-package Logica;
+package Interfaces;
 
 public interface Durable {
     public void avanzar(int seg); //en segundos

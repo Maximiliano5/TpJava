@@ -1,4 +1,5 @@
-package Logica;
+package Clases;
+import Clases.Publicacion;
 import java.util.List;
 
 

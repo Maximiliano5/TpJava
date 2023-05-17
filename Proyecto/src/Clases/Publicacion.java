@@ -1,4 +1,4 @@
-package Logica;
+package Clases;
 
 public class Publicacion {
     private String nombre;

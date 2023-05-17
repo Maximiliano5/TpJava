@@ -1,5 +1,8 @@
 package Logica;
 
+import Clases.Album;
+import Clases.Perfil;
+import Clases.Publicacion;
 import Datos.Handler;
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +17,6 @@ import org.xml.sax.SAXException;
 
 public class Main {
     public static ArrayList<Publicacion> Lista;
-    public static ArrayList<Publicacion> ListaOrd;
     public static void CargaDatos() throws SAXException, IOException, ParserConfigurationException{
        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
        SAXParser saxParser = saxParserFactory.newSAXParser();
@@ -26,25 +28,26 @@ public class Main {
     public static void OrdenaDatos(){
         TreeSet<Publicacion> personasOrdenadas = new TreeSet<>(Comparator.comparing(Publicacion::getNombre));
         personasOrdenadas.addAll(Lista);
-        ListaOrd.addAll(personasOrdenadas);
+        Lista.clear();
+        Lista.addAll(personasOrdenadas);
         
     }
 
     public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException{
        Lista = new ArrayList<>();
-       ListaOrd = new ArrayList<>();
        CargaDatos();
        OrdenaDatos();
-       ArrayList<Album> A = null;
-       Perfil objPerfil = new Perfil("Pepe","Gomez",1000,900,ListaOrd,A);//Crea Objeto Perfil y carga el constructor con el Arraylist ya ordenado
        
-       //for(int i=0; i<ListaOrd.size(); i++){
-         //System.out.println(ListaOrd.get(i).getNombre());
-         //System.out.println(ListaOrd.get(i).getFecha());
-         //System.out.println(ListaOrd.get(i).getCantMG());
-         //System.out.println(ListaOrd.get(i).getComentarios());
-         //System.out.println(ListaOrd.get(i).getEtiquetas());
-       //}
+       ArrayList<Album> A = null;
+       Perfil objPerfil = new Perfil("Pepe","Gomez",1000,900,Lista,A);//Crea Objeto Perfil y carga el constructor con el Arraylist ya ordenado
+       
+       for(int i=0; i<Lista.size(); i++){
+         System.out.println(Lista.get(i).getNombre());
+         System.out.println(Lista.get(i).getFecha());
+         System.out.println(Lista.get(i).getCantMG());
+         System.out.println(Lista.get(i).getComentarios());
+         System.out.println(Lista.get(i).getEtiquetas());
+       }
     }
     
 }

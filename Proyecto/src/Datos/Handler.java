@@ -1,9 +1,9 @@
 package Datos;
 
-import Logica.Audio;
-import Logica.Imagen;
-import Logica.Publicacion;
-import Logica.Video;
+import Clases.Audio;
+import Clases.Imagen;
+import Clases.Publicacion;
+import Clases.Video;
 import java.util.ArrayList;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

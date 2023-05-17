@@ -1,16 +1,19 @@
-package Logica;
+package Clases;
+import Clases.Publicacion;
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class Perfil {
     private String Nombre;
     private String Apellido;
     private int Seguidores;
     private int Seguidos;
-    private List<Publicacion> pubList;  
+    private ArrayList<Publicacion> pubList;  
     private List<Album> albumList;
     
     //constructor
-    public Perfil(String Nombre, String Apellido, int Seguidores, int Seguidos, List<Publicacion> pubList, List<Album> albumList) {
+    public Perfil(String Nombre, String Apellido, int Seguidores, int Seguidos, ArrayList<Publicacion> pubList, List<Album> albumList) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Seguidores = Seguidores;
@@ -18,6 +21,7 @@ public class Perfil {
         this.pubList = pubList;
         this.albumList = albumList;
     }
+
 
     //getters
     public String getNombre() {
@@ -40,6 +44,8 @@ public class Perfil {
         return pubList;
     }
 
+    
+
     public List<Album> getAlbumList() {
         return albumList;
     } 
@@ -61,7 +67,7 @@ public class Perfil {
         this.Seguidos = Seguidos;
     }
 
-    public void setPubList(List<Publicacion> pubList) {
+    public void setPubList(ArrayList<Publicacion> pubList) {
         this.pubList = pubList;
     }
 
