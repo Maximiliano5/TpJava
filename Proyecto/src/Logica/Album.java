@@ -57,6 +57,8 @@ public class Album {
      public void eliminar()//elimina de forma recursiva los subalbumes
      {
         for (Album auxAlbum:subAlbum) {
+            for(Publicacion auxpub:Lpubli)//dudoso esto hay que preguntar!!!
+                Lpubli.remove(auxpub);
             auxAlbum.eliminar();
         }
         subAlbum.clear();

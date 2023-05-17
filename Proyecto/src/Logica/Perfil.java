@@ -68,4 +68,11 @@ public class Perfil {
     public void setAlbumList(List<Album> albumList) {
         this.albumList = albumList;
     }  
+    public void eliminar()//elimina de forma recursiva los subalbumes
+     {
+        for (Album auxAlbum:albumList) {
+            auxAlbum.eliminar();
+        }
+        albumList.clear();
+    }  
 }
