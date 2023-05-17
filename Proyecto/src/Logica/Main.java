@@ -3,7 +3,7 @@ package Logica;
 import Clases.Album;
 import Clases.Perfil;
 import Clases.Publicacion;
-import Datos.Handler;
+import Persistencia.Handler;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,13 +41,14 @@ public class Main {
        ArrayList<Album> A = null;
        Perfil objPerfil = new Perfil("Pepe","Gomez",1000,900,Lista,A);//Crea Objeto Perfil y carga el constructor con el Arraylist ya ordenado
        
-       for(int i=0; i<Lista.size(); i++){
-         System.out.println(Lista.get(i).getNombre());
-         System.out.println(Lista.get(i).getFecha());
-         System.out.println(Lista.get(i).getCantMG());
-         System.out.println(Lista.get(i).getComentarios());
-         System.out.println(Lista.get(i).getEtiquetas());
-       }
+       
+       //for(int i=0; i<Lista.size(); i++){
+         //System.out.println(Lista.get(i).getNombre());
+         //System.out.println(Lista.get(i).getFecha());
+         //System.out.println(Lista.get(i).getCantMG());
+         //System.out.println(Lista.get(i).getComentarios());
+         //System.out.println(Lista.get(i).getEtiquetas());
+       //}
     }
     
 }
