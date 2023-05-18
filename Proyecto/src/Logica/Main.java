@@ -1,11 +1,9 @@
 package Logica;
 
 import Clases.Album;
-import Clases.Audio;
-import Clases.Imagen;
 import Clases.Perfil;
 import Clases.Publicacion;
-import Clases.Video;
+import InterfazGrafica.Pantalla;
 import Persistencia.Handler;
 import java.io.File;
 import java.io.IOException;
@@ -43,7 +41,9 @@ public class Main {
        
        ArrayList<Album> A = null;
        Perfil objPerfil = new Perfil("Pepe","Gomez",1000,900,Lista,A);//Crea Objeto Perfil y carga el constructor con el Arraylist ya ordenado
-       
+       Pantalla Panta = new Pantalla();
+       Panta.setVisible(true);
+       Panta.setLocationRelativeTo(null);
        
        //for(int i=0; i<Lista.size(); i++){
          //System.out.println("Nombre: " + Lista.get(i).getNombre());
