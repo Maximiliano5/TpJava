@@ -108,6 +108,5 @@ public class Video extends Publicacion implements Durable,Filtrable{
 
     public void setFiltro(boolean Filtro) {
         this.Filtro = Filtro;
-    }
-    
+    }   
 }

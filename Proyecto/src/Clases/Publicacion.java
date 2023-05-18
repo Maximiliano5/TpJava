@@ -57,19 +57,5 @@ public class Publicacion {
     public void setComentarios(int comentarios) {
         this.comentarios = comentarios;
     } 
-
-    public void setDuracion(int parseInt) {}
-
-    public void setResolucion(int parseInt) {}
-
-    public void setFps(int parseInt) {}
-
-    public void SetAlto(int parseInt) {}
-
-    public void setAncho(int parseInt) {}
-
-    public void setFiltro(boolean parseBoolean) {}
-
-    public void setVelocidad(int parseInt) {}
 }
 

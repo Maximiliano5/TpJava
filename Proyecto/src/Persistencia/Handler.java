@@ -44,25 +44,37 @@ public class Handler extends DefaultHandler{
                 Publica.setComentarios(Integer.parseInt(Buffer.toString()));
                 break;
             case "Duracion":
-                Publica.setDuracion(Integer.parseInt(Buffer.toString()));
+                if(Publica instanceof Video){
+                  ((Video)Publica).setDuracion(Integer.parseInt(Buffer.toString()));
+                }else{
+                   ((Audio)Publica).setDuracion(Integer.parseInt(Buffer.toString()));
+                }
                 break;
             case "Resolucion":
-                Publica.setResolucion(Integer.parseInt(Buffer.toString()));
+                if(Publica instanceof Imagen){
+                  ((Imagen)Publica).setResolucion(Integer.parseInt(Buffer.toString()));
+                }else{
+                    ((Video)Publica).setResolucion(Integer.parseInt(Buffer.toString()));
+                }
                 break;
             case "Fps":
-                Publica.setFps(Integer.parseInt(Buffer.toString()));
+                ((Video)Publica).setFps(Integer.parseInt(Buffer.toString()));
                 break;
             case "Alto":
-                Publica.SetAlto(Integer.parseInt(Buffer.toString()));
+                ((Imagen)Publica).setAlto(Integer.parseInt(Buffer.toString()));
                 break;
             case "Ancho":
-                Publica.setAncho(Integer.parseInt(Buffer.toString()));
+                ((Imagen)Publica).setAncho(Integer.parseInt(Buffer.toString()));
                 break;
             case "Filtro":
-                Publica.setFiltro(Boolean.parseBoolean(Buffer.toString()));
+                if(Publica instanceof Imagen){
+                   ((Imagen)Publica).setFiltro(Boolean.parseBoolean(Buffer.toString()));
+                }else{
+                    ((Video)Publica).setFiltro(Boolean.parseBoolean(Buffer.toString()));
+                }
                 break;
             case "Velocidad":
-                Publica.setVelocidad(Integer.parseInt(Buffer.toString()));
+                ((Audio)Publica).setVelbits(Integer.parseInt(Buffer.toString()));
                 break;  
         }
         Buffer.setLength(0);

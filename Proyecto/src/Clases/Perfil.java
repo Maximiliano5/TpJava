@@ -43,8 +43,6 @@ public class Perfil {
         return pubList;
     }
 
-    
-
     public List<Album> getAlbumList() {
         return albumList;
     } 

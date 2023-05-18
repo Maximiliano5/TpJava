@@ -9,7 +9,7 @@
       <Duracion>20</Duracion>
       <Resolucion>20</Resolucion>
       <Fps>60</Fps>
-      <Filtro>no</Filtro>
+      <Filtro>false</Filtro>
     </video>
     <video>
       <Nombre>Mar</Nombre>
@@ -20,7 +20,7 @@
       <Duracion>6</Duracion>
       <Resolucion>40</Resolucion>
       <Fps>66</Fps>
-      <Filtro>no</Filtro>
+      <Filtro>true</Filtro>
     </video>
     <video>
       <Nombre>Fiesta</Nombre>
@@ -31,7 +31,7 @@
       <Duracion>8</Duracion>
       <Resolucion>66</Resolucion>
       <Fps>60</Fps>
-      <Filtro>no</Filtro>
+      <Filtro>true</Filtro>
     </video>
     <video>
       <Nombre>Futbol</Nombre>
@@ -42,7 +42,7 @@
       <Duracion>70</Duracion>
       <Resolucion>60</Resolucion>
       <Fps>60</Fps>
-      <Filtro>si</Filtro>
+      <Filtro>true</Filtro>
     </video>
     <Imagen>
       <Nombre>River Boca</Nombre>
@@ -53,7 +53,7 @@
       <Resolucion>50</Resolucion>
       <Alto>70</Alto>
       <Ancho>80</Ancho>
-      <Filtro>si</Filtro>
+      <Filtro>true</Filtro>
     </Imagen>
     <Imagen>
       <Nombre>Bosque</Nombre>
@@ -64,7 +64,7 @@
       <Resolucion>80</Resolucion>
       <Alto>90</Alto>
       <Ancho>80</Ancho>
-      <Filtro>si</Filtro>
+      <Filtro>false</Filtro>
     </Imagen>
     <Imagen>
       <Nombre>Familia</Nombre>
@@ -75,7 +75,7 @@
       <Resolucion>50</Resolucion>
       <Alto>50</Alto>
       <Ancho>30</Ancho>
-      <Filtro>si</Filtro>
+      <Filtro>true</Filtro>
     </Imagen>
     <Imagen>
       <Nombre>Mascota</Nombre>
@@ -86,7 +86,7 @@
       <Resolucion>100</Resolucion>
       <Alto>90</Alto>
       <Ancho>70</Ancho>
-      <Filtro>si</Filtro>
+      <Filtro>true</Filtro>
     </Imagen>
     <Imagen>
       <Nombre>Vacaciones</Nombre>
@@ -97,7 +97,7 @@
       <Resolucion>40</Resolucion>
       <Alto>90</Alto>
       <Ancho>30</Ancho>
-      <Filtro>no</Filtro>
+      <Filtro>false</Filtro>
     </Imagen>
     <Imagen>
       <Nombre>Compu</Nombre>
@@ -108,7 +108,7 @@
       <Resolucion>90</Resolucion>
       <Alto>90</Alto>
       <Ancho>80</Ancho>
-      <Filtro>no</Filtro>
+      <Filtro>false</Filtro>
     </Imagen>
     <Imagen>
       <Nombre>Noche</Nombre>
@@ -119,7 +119,7 @@
       <Resolucion>100</Resolucion>
       <Alto>80</Alto>
       <Ancho>70</Ancho>
-      <Filtro>si</Filtro>
+      <Filtro>true</Filtro>
     </Imagen>
     <Imagen>
       <Nombre>Tarde</Nombre>
@@ -130,7 +130,7 @@
       <Resolucion>90</Resolucion>
       <Alto>90</Alto>
       <Ancho>80</Ancho>
-      <Filtro>si</Filtro>
+      <Filtro>true</Filtro>
     </Imagen>
     <Imagen>
       <Nombre>Trabajo</Nombre>
@@ -141,7 +141,7 @@
       <Resolucion>20</Resolucion>
       <Alto>90</Alto>
       <Ancho>80</Ancho>
-      <Filtro>no</Filtro>
+      <Filtro>false</Filtro>
     </Imagen>
     <Audio>
       <Nombre>Informacion</Nombre>
