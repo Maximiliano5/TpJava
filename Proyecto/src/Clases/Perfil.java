@@ -1,6 +1,8 @@
 package Clases;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
 
 
 public class Perfil {
@@ -78,4 +80,40 @@ public class Perfil {
         }
         albumList.clear();
     }  
+    public void filtraPubli(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList)
+    {
+        TreeSet<Publicacion> mgDescendente = new TreeSet<>(Comparator.comparingInt(Publicacion::getCantMG).reversed());
+        mgDescendente.addAll(pubList);
+        pubList.clear();
+        pubList.addAll(mgDescendente);
+        for(Publicacion auxp:pubList)
+        {
+            if(auxp instanceof Imagen)
+                imgList.add(auxp);
+            else if(auxp instanceof Audio)
+                audList.add(auxp);
+            else
+                vidList.add(auxp);
+        }
+    }
+    public void reportes(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float PromMGAudios,int cantImg,float PromMGImg)//agregar metodo que calcule el promedio pasandole lista de publicacoines y cant
+    {
+        filtraPubli(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList);
+        cantVideos=vidList.size();
+        cantAudios=audList.size();
+        cantImg=imgList.size();
+        float sumamg;
+        sumamg=0;
+        for(Imagen auxImg:imgList){
+                suma+=auxImg.getCantMG();}
+        promMGImg=suma/cantImg;
+        suma=0;
+        for(Audio auxAud:audList){
+                suma+=auxAud.getCantMG();}
+        promMGAudios=suma/cantAudios;
+        suma=0;
+        for(Video auxVid:vidList){
+            suma+=auxVid.getCantMG();}
+        promMGVideos=suma/cantVideos;
+    }
 }
