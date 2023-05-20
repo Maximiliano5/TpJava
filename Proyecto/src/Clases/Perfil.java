@@ -159,7 +159,7 @@ public class Perfil {
     public void reportes(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg)//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
     {
         filtraPubli(imgList,vidList, audList);
-        generarReportePubs("reporte.txt",vidList,audList,imgList,cantVideos,promMGVideos,cantAudios,promMGAudios,cantImg,promMGImg);
+        System.out.println(generarReportePubs("reporte.txt",vidList,audList,imgList,cantVideos,promMGVideos,cantAudios,promMGAudios,cantImg,promMGImg));
         
        
     }
