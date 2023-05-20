@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.TreeSet;
+import javax.swing.JOptionPane;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -21,13 +22,21 @@ public class Carga {
 
     public Carga(){}
     
-    public void CargaDatos(ArrayList<Publicacion> Lista) throws ParserConfigurationException, SAXException, IOException{
-        saxParserFactory = SAXParserFactory.newInstance();
-        saxParser = saxParserFactory.newSAXParser();
-        Arch = new File("datos.xml");
-        Version = new Handler();
-        saxParser.parse(Arch,Version);
-        Lista.addAll(Version.getPublicaciones());
+    public void CargaDatos(ArrayList<Publicacion> Lista){
+        try{
+          saxParserFactory = SAXParserFactory.newInstance();
+          saxParser = saxParserFactory.newSAXParser();
+          Arch = new File("datos.xml");
+          Version = new Handler();
+          saxParser.parse(Arch,Version);
+          Lista.addAll(Version.getPublicaciones());
+        }catch(SAXException e){
+            JOptionPane.showMessageDialog(null,"Problemas con los datos del xml") ;
+        }catch(ParserConfigurationException e){
+            JOptionPane.showMessageDialog(null,"Problemas con el analizador del xml");
+        }catch(IOException e){
+            JOptionPane.showMessageDialog(null,"Problemas en la lectura del archivo");
+        }
         
     }
     
@@ -36,5 +45,6 @@ public class Carga {
        persOrd.addAll(Lista);
        Lista.clear();
        Lista.addAll(persOrd);
+       persOrd.clear();
     }
 }

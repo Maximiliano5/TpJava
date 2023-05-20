@@ -15,18 +15,17 @@ public class Handler extends DefaultHandler{
     private StringBuilder Buffer = new StringBuilder();
 
     public ArrayList<Publicacion> getPublicaciones() {
-        return (ArrayList<Publicacion>) Publicaciones;
+        return Publicaciones;
     }
     
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
-        super.characters(ch, start, length); //To change body of generated methods, choose Tools | Templates.
-        Buffer.append(ch,start,length);
+    public void characters(char[] ch, int start, int length){ 
+          Buffer.append(ch,start,length);
     }
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-        super.endElement(uri, localName, qName); //To change body of generated methods, choose Tools | Templates.
+        super.endElement(uri, localName, qName); 
         switch(qName){
             case "Nombre":
                 Publica.setNombre(Buffer.toString());
@@ -82,18 +81,18 @@ public class Handler extends DefaultHandler{
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        super.startElement(uri, localName, qName, attributes); //To change body of generated methods, choose Tools | Templates.
-        switch(qName){
+        super.startElement(uri, localName, qName, attributes);
+        switch (qName) {
             case "video":
-                Publica = new Video(0,0,0,0,false,false,"sin",0,0,0,0);
+                Publica = new Video(0, 0, 0, 0, false, false, "sin", 0, 0, 0, 0);
                 Publicaciones.add(Publica);
                 break;
             case "Imagen":
-                Publica = new Imagen(0,0,0,false,"sin",0,0,0,0);
+                Publica = new Imagen(0, 0, 0, false, "sin", 0, 0, 0, 0);
                 Publicaciones.add(Publica);
                 break;
             case "Audio":
-                Publica = new Audio(0,0,0,false,"sin",0,0,0,0); 
+                Publica = new Audio(0, 0, 0, false, "sin", 0, 0, 0, 0);
                 Publicaciones.add(Publica);
                 break;
             case "Nombre":
