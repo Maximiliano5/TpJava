@@ -22,7 +22,7 @@ public class Album {
         return Lpubli;
     }
 
-    public List<Album> getLalbum() {
+    public List<Album> getAlbumList() {
         return subAlbum;
     }
     

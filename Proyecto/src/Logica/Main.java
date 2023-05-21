@@ -13,15 +13,16 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args){
-       ArrayList<Publicacion> Lista = new ArrayList<>();
-       ArrayList<Album> A = null;
-       Pantalla Panta = new Pantalla();
+        ArrayList<Publicacion> Lista = new ArrayList<>();
        Carga Datos = new Carga();
-       Perfil objPerfil = new Perfil("Pepe","Gomez",1000,900,Lista,A);
        Datos.CargaDatos(Lista);
        Datos.OrdenaDatos(Lista);  
+       ArrayList<Album> A = null;
+       Perfil objPerfil = new Perfil("Facundo","Gonzales",1000,900,Lista,A);
+       Pantalla Panta = new Pantalla(objPerfil);
        Panta.setVisible(true);
        Panta.setLocationRelativeTo(null);
+       
        
        //for(int i=0; i<Lista.size(); i++){
        //  System.out.println("Nombre: " + Lista.get(i).getNombre());
