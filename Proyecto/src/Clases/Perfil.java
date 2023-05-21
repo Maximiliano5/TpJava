@@ -1,4 +1,5 @@
 package Clases;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -6,6 +7,7 @@ import java.util.TreeSet;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Collections;
 
 public class Perfil {
     private String Nombre;
@@ -129,7 +131,8 @@ public class Perfil {
      promedioLikesVideos=calcularPromedioLikes(listaVideos,cantVideos);
      promedioLikesAudios=calcularPromedioLikes(listaAudios,cantAudios);
      promedioLikesImagenes=calcularPromedioLikes(listaImagenes,cantImagenes);
-    StringBuilder reporte = new StringBuilder();
+    
+     StringBuilder reporte = new StringBuilder();
 
     try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
         writer.write("Reporte de Publicaciones\n\n");
@@ -156,11 +159,68 @@ public class Perfil {
 
     return reporte.toString();
 }
-    public void reportes(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg)//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
+    private static void generarReporteAlbum(Album album, BufferedWriter writer, long fechaInicio, long fechaFin) throws IOException {
+    writer.write("Álbum: " + album.getNombreAlbum() + "\n");
+
+    int cantPublicaciones = 0;
+
+    for (Publicacion publicacion : album.getLpubli()) {
+        long fechaPublicacion = publicacion.getFecha();
+
+        if (fechaPublicacion >= fechaInicio && fechaPublicacion <= fechaFin) {
+            cantPublicaciones++;
+            int cantComentarios = publicacion.getComentarios();
+
+            writer.write("Publicación: " + publicacion.getNombre() + "\n");
+            writer.write("Cantidad de comentarios: " + cantComentarios + "\n\n");
+        }
+    }
+
+    writer.write("Cantidad de publicaciones: " + cantPublicaciones + "\n\n");
+
+    List<Album> subAlbums = album.getAlbumList();
+    Collections.sort(subAlbums, (a1, a2) -> a1.getNombreAlbum().compareToIgnoreCase(a2.getNombreAlbum()));
+
+    for (Album subAlbum : subAlbums) {
+        generarReporteAlbum(subAlbum, writer, fechaInicio, fechaFin);
+    }
+}
+
+private static String generarReporteAlbumes(String nombreArchivo, List<Album> albumList, long fechaInicio, long fechaFin) {
+    StringBuilder reporte = new StringBuilder();
+
+    try {
+        // Verificar si el archivo ya existe y eliminarlo si es necesario
+        File archivo = new File(nombreArchivo);
+        if (archivo.exists()) {
+            archivo.delete();
+        }
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo));
+        writer.write("Reporte de Álbumes\n\n");
+
+        // Ordenar los álbumes principales alfabéticamente
+        Collections.sort(albumList, (a1, a2) -> a1.getNombreAlbum().compareToIgnoreCase(a2.getNombreAlbum()));
+
+        for (Album album : albumList) {
+            generarReporteAlbum(album, writer, fechaInicio, fechaFin);
+        }
+
+        writer.close();
+
+        reporte.append("Se generó el reporte de álbumes en el archivo: ").append(nombreArchivo);
+    } catch (IOException e) {
+        reporte.append("Error al generar el reporte de álbumes: ").append(e.getMessage());
+    }
+
+    return reporte.toString();
+}
+
+
+    public void reportes(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg,long fechaInicio, long fechaFin)//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
     {
         filtraPubli(imgList,vidList, audList);
-        System.out.println(generarReportePubs("reporte.txt",vidList,audList,imgList,cantVideos,promMGVideos,cantAudios,promMGAudios,cantImg,promMGImg));
-        
-       
+        System.out.println(generarReportePubs("ReportePublicaciones.txt",vidList,audList,imgList,cantVideos,promMGVideos,cantAudios,promMGAudios,cantImg,promMGImg));
+        System.out.println(generarReporteAlbumes("ReporteAlbumes.txt",albumList,fechaInicio,fechaFin)); 
     }
 }
