@@ -1,8 +1,10 @@
 package InterfazGrafica;
 
 import Clases.Perfil;
+import Clases.Publicacion;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class Pantalla extends javax.swing.JFrame {
@@ -23,7 +25,6 @@ public class Pantalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Menu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -39,8 +40,6 @@ public class Pantalla extends javax.swing.JFrame {
         labelPublic = new javax.swing.JLabel();
         labelApellido = new javax.swing.JLabel();
         Contenido = new javax.swing.JPanel();
-
-        jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -116,10 +115,6 @@ public class Pantalla extends javax.swing.JFrame {
             .addComponent(ButtonPubli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ButtonEstadist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ButtonReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(MenuLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(86, 86, 86))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuLayout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(labelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -145,6 +140,10 @@ public class Pantalla extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelSeguidos, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(MenuLayout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,7 +187,7 @@ public class Pantalla extends javax.swing.JFrame {
         );
         ContenidoLayout.setVerticalGroup(
             ContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 622, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -203,9 +202,7 @@ public class Pantalla extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(Contenido, javax.swing.GroupLayout.DEFAULT_SIZE, 622, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -233,7 +230,9 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonReportActionPerformed
 
     private void ButtonEstadistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEstadistActionPerformed
-        PanelEstadist P3 = new PanelEstadist();
+        PanelEstadist P3 = new PanelEstadist(Per);
+        P3.GeneraBarras();
+        P3.GraficoCircular();
         ShowPanel(P3);
     }//GEN-LAST:event_ButtonEstadistActionPerformed
      
@@ -253,7 +252,6 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JPanel Contenido;
     private javax.swing.JPanel Menu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;

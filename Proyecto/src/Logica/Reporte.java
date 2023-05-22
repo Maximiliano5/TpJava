@@ -14,9 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Reporte{
-    
-    
-    
+  
     private static void escribirPublicaciones(BufferedWriter writer, List<? extends Publicacion> listaPublicaciones)
         throws IOException {
     if (listaPublicaciones.isEmpty()) {
@@ -30,9 +28,9 @@ public class Reporte{
 }
      private static String generarReportePubs(String nombreArchivo, List<Video> listaVideos, List<Audio> listaAudios,
         List<Imagen> listaImagenes,int cantVideos, float promedioLikesVideos,int cantAudios, float promedioLikesAudios,int cantImagenes, float promedioLikesImagenes) {
-     cantVideos = listaVideos.size();
-     cantAudios = listaAudios.size();
-     cantImagenes = listaImagenes.size();
+        cantVideos = listaVideos.size();
+        cantAudios = listaAudios.size();
+        cantImagenes = listaImagenes.size();
      
     
      StringBuilder reporte = new StringBuilder();
