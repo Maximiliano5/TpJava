@@ -64,4 +64,14 @@ public class Imagen extends Publicacion implements Filtrable{
     public void setFiltro(Boolean Filtro) {
         this.Filtro = Filtro;
     } 
+    @Override
+    public String muestra()
+    {
+        return "Imagen{" +
+                "resolucion=" + Resolucion +
+                ", alto=" + Alto +
+                ", ancho=" + Ancho +
+                ", filtro=" + Filtro +
+                '}';
+    }
 }

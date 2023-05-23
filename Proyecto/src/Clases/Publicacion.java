@@ -1,6 +1,6 @@
 package Clases;
 
-public class Publicacion {
+public abstract class Publicacion {
     private String nombre;
     private long fecha; //aaaammdd
     private int cantMG;
@@ -36,7 +36,7 @@ public class Publicacion {
     public int getComentarios() {
         return comentarios;
     }
-    
+   
     //Setters
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -56,6 +56,7 @@ public class Publicacion {
 
     public void setComentarios(int comentarios) {
         this.comentarios = comentarios;
-    } 
+    }
+    public abstract String muestra();
+   
 }
-

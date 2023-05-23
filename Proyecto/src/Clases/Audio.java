@@ -78,4 +78,15 @@ public class Audio extends Publicacion implements Durable{
     public void setReproduciendo(boolean reproduciendo) {
         this.reproduciendo = reproduciendo;
     }    
+    @Override
+    public String muestra()
+    {
+        return "Audio{" +
+                "duracion=" + duracion +
+                ", velbits=" + velbits +
+                ", tiempoAct=" + tiempoact +
+                ", reproduciendo=" + reproduciendo +
+                '}';
+    }
+
 }

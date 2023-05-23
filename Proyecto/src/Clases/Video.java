@@ -108,5 +108,16 @@ public class Video extends Publicacion implements Durable,Filtrable{
 
     public void setFiltro(boolean Filtro) {
         this.Filtro = Filtro;
-    }   
+    }  
+    @Override
+    public String muestra(){
+        return "Video{" +
+                "duracion=" + duracion +
+                ", resolucion=" + resolucion +
+                ", fps=" + fps +
+                ", tiempoAct=" + tiempoact +
+                ", reproduciendo=" + reproduciendo +
+                ", filtro=" + Filtro +
+                '}';      
+    }
 }
