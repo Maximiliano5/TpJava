@@ -23,7 +23,7 @@ public class Main {
        Panta.setVisible(true);
        Panta.setLocationRelativeTo(null);
        
-       
+      
        //for(int i=0; i<Lista.size(); i++){
        //  System.out.println("Nombre: " + Lista.get(i).getNombre());
        //  System.out.println("Fecha: "+ Lista.get(i).getFecha());
