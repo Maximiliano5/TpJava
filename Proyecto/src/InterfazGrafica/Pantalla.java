@@ -31,7 +31,7 @@ public class Pantalla extends javax.swing.JFrame {
         labelNombre = new javax.swing.JLabel();
         ButtonPubli = new javax.swing.JButton();
         ButtonEstadist = new javax.swing.JButton();
-        ButtonReport = new javax.swing.JButton();
+        ButtonAlbum = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         labelSeguidos = new javax.swing.JLabel();
@@ -39,6 +39,7 @@ public class Pantalla extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         labelPublic = new javax.swing.JLabel();
         labelApellido = new javax.swing.JLabel();
+        ButtonReporte = new javax.swing.JButton();
         Contenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,13 +80,13 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
 
-        ButtonReport.setBackground(new java.awt.Color(0, 51, 153));
-        ButtonReport.setForeground(new java.awt.Color(255, 255, 255));
-        ButtonReport.setText("Reporte");
-        ButtonReport.setBorder(null);
-        ButtonReport.addActionListener(new java.awt.event.ActionListener() {
+        ButtonAlbum.setBackground(new java.awt.Color(0, 51, 153));
+        ButtonAlbum.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonAlbum.setText("Albumes");
+        ButtonAlbum.setBorder(null);
+        ButtonAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonReportActionPerformed(evt);
+                ButtonAlbumActionPerformed(evt);
             }
         });
 
@@ -108,13 +109,23 @@ public class Pantalla extends javax.swing.JFrame {
 
         labelApellido.setForeground(new java.awt.Color(255, 255, 255));
 
+        ButtonReporte.setBackground(new java.awt.Color(0, 51, 153));
+        ButtonReporte.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonReporte.setText("Reporte");
+        ButtonReporte.setBorder(null);
+        ButtonReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonReporteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
         Menu.setLayout(MenuLayout);
         MenuLayout.setHorizontalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ButtonPubli, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ButtonEstadist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(ButtonReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ButtonAlbum, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MenuLayout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(labelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -144,6 +155,7 @@ public class Pantalla extends javax.swing.JFrame {
                 .addGap(109, 109, 109)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(ButtonReporte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         MenuLayout.setVerticalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,8 +184,10 @@ public class Pantalla extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ButtonEstadist, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonReport, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94))
+                .addComponent(ButtonAlbum, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ButtonReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         Contenido.setBackground(new java.awt.Color(255, 255, 255));
@@ -224,10 +238,10 @@ public class Pantalla extends javax.swing.JFrame {
         ShowPanel(P1);
     }//GEN-LAST:event_ButtonPubliActionPerformed
 
-    private void ButtonReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonReportActionPerformed
-        PanelReport P2 = new PanelReport(); 
+    private void ButtonAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAlbumActionPerformed
+        PanelAlbum P2 = new PanelAlbum(); 
         ShowPanel(P2);
-    }//GEN-LAST:event_ButtonReportActionPerformed
+    }//GEN-LAST:event_ButtonAlbumActionPerformed
 
     private void ButtonEstadistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEstadistActionPerformed
         PanelEstadist P3 = new PanelEstadist(Per);
@@ -235,6 +249,12 @@ public class Pantalla extends javax.swing.JFrame {
         P3.GraficoCircular();
         ShowPanel(P3);
     }//GEN-LAST:event_ButtonEstadistActionPerformed
+
+    private void ButtonReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonReporteActionPerformed
+        PanelReport P4 = new PanelReport(Per);
+        P4.MustraTablas();
+        ShowPanel(P4);
+    }//GEN-LAST:event_ButtonReporteActionPerformed
      
     private void ShowPanel(JPanel P){
         P.setSize(497, 662);
@@ -246,9 +266,10 @@ public class Pantalla extends javax.swing.JFrame {
     }  
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonAlbum;
     private javax.swing.JButton ButtonEstadist;
     private javax.swing.JButton ButtonPubli;
-    private javax.swing.JButton ButtonReport;
+    private javax.swing.JButton ButtonReporte;
     private javax.swing.JPanel Contenido;
     private javax.swing.JPanel Menu;
     private javax.swing.JLabel jLabel1;
