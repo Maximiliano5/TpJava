@@ -1,7 +1,9 @@
 package InterfazGrafica;
 
+import Clases.Audio;
+import Clases.Imagen;
 import Clases.Perfil;
-import Clases.Publicacion;
+import Clases.Video;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -9,10 +11,21 @@ import javax.swing.JPanel;
 
 public class Pantalla extends javax.swing.JFrame {
     private Perfil Per;
+    private ArrayList<Imagen> imgList;
+    private ArrayList<Video> vidList;
+    private ArrayList<Audio> audList;
+    float I,A,V;
 
     public Pantalla(Perfil Perf) {
         initComponents();
         Per = Perf;
+        imgList = new ArrayList();
+        vidList = new ArrayList();
+        audList = new ArrayList();
+        Per.filtraPubli(imgList, vidList, audList);
+        I = Per.calcularPromedioLikes(imgList, imgList.size());
+        A = Per.calcularPromedioLikes(audList, audList.size());
+        V = Per.calcularPromedioLikes(vidList, vidList.size());
         labelNombre.setText(Per.getNombre());
         labelApellido.setText(Per.getApellido());
         labelSeguidores.setText(String.valueOf(Per.getSeguidores()));
@@ -244,15 +257,16 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonAlbumActionPerformed
 
     private void ButtonEstadistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEstadistActionPerformed
-        PanelEstadist P3 = new PanelEstadist(Per);
-        P3.GeneraBarras();
-        P3.GraficoCircular();
+        PanelEstadist P3 = new PanelEstadist();
+        P3.GeneraBarras(imgList,vidList,audList,I,A,V);
+        P3.GraficoCircular(imgList,vidList,audList);
         ShowPanel(P3);
     }//GEN-LAST:event_ButtonEstadistActionPerformed
 
     private void ButtonReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonReporteActionPerformed
-        PanelReport P4 = new PanelReport(Per);
-        P4.MustraTablas();
+       PanelReport P4 = new PanelReport(imgList,vidList,audList,V,A,I);
+        P4.MustraTablas(imgList,vidList,audList);
+        P4.CargaLabels(V,A,I,vidList.size(),imgList.size(),audList.size());
         ShowPanel(P4);
     }//GEN-LAST:event_ButtonReporteActionPerformed
      

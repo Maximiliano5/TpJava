@@ -9,13 +9,14 @@ public class Audio extends Publicacion implements Durable{
     private  boolean reproduciendo;
 
     //constructor
-    public Audio(int duracion, int velbits, int tiempoact, boolean reproduciendo, String n, long f, int cant, int e, int com) {
+    public Audio(int duracion, int velbits, int tiempoact, boolean reproduciendo, String n, String f, int cant, int e, int com) {
         super(n, f, cant, e, com);
         this.duracion = duracion;
         this.velbits = velbits;
         this.tiempoact = tiempoact;
         this.reproduciendo = reproduciendo;
     }
+
     
     //Metodos de la interfaz
     @Override

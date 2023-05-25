@@ -121,5 +121,15 @@ public class Perfil {
 
         return (float) totalLikes / cantidadPubs;
     }
+    
+    public ArrayList<Publicacion> masComentados(){
+        ArrayList<Publicacion> lista =new ArrayList<>();
+        for (Publicacion pubaux: pubList){
+            if (pubaux.getComentarios()>100){
+                lista.add(pubaux);
+            }
+        }
+        return lista;
+    }
      
 }

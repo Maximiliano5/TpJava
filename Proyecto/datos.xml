@@ -2,8 +2,8 @@
 <Publicaciones>
     <video>
       <Nombre>Playa</Nombre>
-      <Fecha>20230122</Fecha>
-      <CantMG>30</CantMG>
+      <Fecha>2023/05/24</Fecha>
+      <CantMG>40</CantMG>
       <Etiquetas>5</Etiquetas>
       <Comentarios>4</Comentarios>
       <Duracion>20</Duracion>
@@ -13,8 +13,8 @@
     </video>
     <video>
       <Nombre>Luna</Nombre>
-      <Fecha>20230129</Fecha>
-      <CantMG>30</CantMG>
+      <Fecha>2023/05/25</Fecha>
+      <CantMG>50</CantMG>
       <Etiquetas>7</Etiquetas>
       <Comentarios>3</Comentarios>
       <Duracion>20</Duracion>
@@ -24,8 +24,8 @@
     </video>
     <video>
       <Nombre>Teatro</Nombre>
-      <Fecha>20230123</Fecha>
-      <CantMG>30</CantMG>
+      <Fecha>2023/05/26</Fecha>
+      <CantMG>60</CantMG>
       <Etiquetas>90</Etiquetas>
       <Comentarios>40</Comentarios>
       <Duracion>20</Duracion>
@@ -35,8 +35,8 @@
     </video>
     <video>
       <Nombre>Auto</Nombre>
-      <Fecha>20230124</Fecha>
-      <CantMG>30</CantMG>
+      <Fecha>2023/05/27</Fecha>
+      <CantMG>70</CantMG>
       <Etiquetas>6</Etiquetas>
       <Comentarios>90</Comentarios>
       <Duracion>60</Duracion>
@@ -46,8 +46,8 @@
     </video>
     <video>
       <Nombre>Laguna</Nombre>
-      <Fecha>20230125</Fecha>
-      <CantMG>30</CantMG>
+      <Fecha>2023/05/28</Fecha>
+      <CantMG>80</CantMG>
       <Etiquetas>40</Etiquetas>
       <Comentarios>4</Comentarios>
       <Duracion>90</Duracion>
@@ -57,8 +57,8 @@
     </video>
     <video>
       <Nombre>F1</Nombre>
-      <Fecha>20230126</Fecha>
-      <CantMG>30</CantMG>
+      <Fecha>2023/05/29</Fecha>
+      <CantMG>90</CantMG>
       <Etiquetas>10</Etiquetas>
       <Comentarios>900</Comentarios>
       <Duracion>25</Duracion>
@@ -68,8 +68,8 @@
     </video>
     <video>
       <Nombre>Qatar</Nombre>
-      <Fecha>20221218</Fecha>
-      <CantMG>10</CantMG>
+      <Fecha>2023/05/30</Fecha>
+      <CantMG>100</CantMG>
       <Etiquetas>10</Etiquetas>
       <Comentarios>10</Comentarios>
       <Duracion>10</Duracion>
@@ -79,18 +79,18 @@
     </video>
     <video>
       <Nombre>Italia</Nombre>
-      <Fecha>20230127</Fecha>
-      <CantMG>30</CantMG>
-      <Etiquetas>6</Etiquetas>
-      <Comentarios>10</Comentarios>
-      <Duracion>2</Duracion>
-      <Resolucion>2</Resolucion>
-      <Fps>60</Fps>
+      <Fecha>2023/05/31</Fecha>
+      <CantMG>110</CantMG>
+      <Etiquetas>20</Etiquetas>
+      <Comentarios>20</Comentarios>
+      <Duracion>20</Duracion>
+      <Resolucion>20</Resolucion>
+      <Fps>20</Fps>
       <Filtro>false</Filtro>
     </video>
     <video>
       <Nombre>Ciudad</Nombre>
-      <Fecha>20230122</Fecha>
+      <Fecha>2023/06/01</Fecha>
       <CantMG>30</CantMG>
       <Etiquetas>5</Etiquetas>
       <Comentarios>3</Comentarios>
@@ -101,8 +101,8 @@
     </video>
     <video>
       <Nombre>Plaza</Nombre>
-      <Fecha>20230122</Fecha>
-      <CantMG>30</CantMG>
+      <Fecha>2023/06/02</Fecha>
+      <CantMG>35</CantMG>
       <Etiquetas>8</Etiquetas>
       <Comentarios>4</Comentarios>
       <Duracion>80</Duracion>
@@ -112,8 +112,8 @@
     </video>
     <video>
       <Nombre>Fifa</Nombre>
-      <Fecha>20230129</Fecha>
-      <CantMG>80</CantMG>
+      <Fecha>2023/06/03</Fecha>
+      <CantMG>846</CantMG>
       <Etiquetas>5</Etiquetas>
       <Comentarios>70</Comentarios>
       <Duracion>20</Duracion>
@@ -123,7 +123,7 @@
     </video>
     <video>
       <Nombre>Nieve</Nombre>
-      <Fecha>20230719</Fecha>
+      <Fecha>2023/06/04</Fecha>
       <CantMG>900</CantMG>
       <Etiquetas>20</Etiquetas>
       <Comentarios>4</Comentarios>
@@ -134,8 +134,8 @@
     </video>
     <video>
       <Nombre>Gym</Nombre>
-      <Fecha>2023012</Fecha>
-      <CantMG>30</CantMG>
+      <Fecha>2023/06/05</Fecha>
+      <CantMG>6</CantMG>
       <Etiquetas>5</Etiquetas>
       <Comentarios>4</Comentarios>
       <Duracion>10</Duracion>
@@ -145,7 +145,7 @@
     </video>
     <video>
       <Nombre>Mar</Nombre>
-      <Fecha>20230123</Fecha>
+      <Fecha>2023/06/06</Fecha>
       <CantMG>9</CantMG>
       <Etiquetas>3</Etiquetas>
       <Comentarios>0</Comentarios>
@@ -156,7 +156,7 @@
     </video>
     <video>
       <Nombre>Fiesta</Nombre>
-      <Fecha>20230201</Fecha>
+      <Fecha>2023/06/07</Fecha>
       <CantMG>700</CantMG>
       <Etiquetas>0</Etiquetas>
       <Comentarios>0</Comentarios>
@@ -167,7 +167,7 @@
     </video>
     <video>
       <Nombre>Futbol</Nombre>
-      <Fecha>20230219</Fecha>
+      <Fecha>2023/06/08</Fecha>
       <CantMG>1000</CantMG>
       <Etiquetas>9</Etiquetas>
       <Comentarios>98</Comentarios>
@@ -177,8 +177,30 @@
       <Filtro>true</Filtro>
     </video>
     <Imagen>
+      <Nombre>Amigos en la montaña</Nombre>
+      <Fecha>2023/08/01</Fecha>
+      <CantMG>87</CantMG>
+      <Etiquetas>4</Etiquetas>
+      <Comentarios>9</Comentarios>
+      <Resolucion>55</Resolucion>
+      <Alto>75</Alto>
+      <Ancho>85</Ancho>
+      <Filtro>false</Filtro>
+    </Imagen>
+    <Imagen>
+      <Nombre>Moda urbana</Nombre>
+      <Fecha>2023/08/02</Fecha>
+      <CantMG>223</CantMG>
+      <Etiquetas>9</Etiquetas>
+      <Comentarios>6</Comentarios>
+      <Resolucion>55</Resolucion>
+      <Alto>80</Alto>
+      <Ancho>90</Ancho>
+     <Filtro>false</Filtro>
+    </Imagen>
+    <Imagen>
       <Nombre>River Boca</Nombre>
-      <Fecha>20230507</Fecha>
+      <Fecha>2018/12/09</Fecha>
       <CantMG>199</CantMG>
       <Etiquetas>6</Etiquetas>
       <Comentarios>5</Comentarios>
@@ -188,8 +210,41 @@
       <Filtro>true</Filtro>
     </Imagen>
     <Imagen>
+      <Nombre>Puesta de sol</Nombre>
+      <Fecha>2023/08/04</Fecha>
+      <CantMG>150</CantMG>
+      <Etiquetas>3</Etiquetas>
+      <Comentarios>8</Comentarios>
+      <Resolucion>60</Resolucion>
+      <Alto>90</Alto>
+      <Ancho>100</Ancho>
+      <Filtro>false</Filtro>
+    </Imagen>
+    <Imagen>
+      <Nombre>Comida deliciosa</Nombre>
+      <Fecha>2023/08/09</Fecha>
+      <CantMG>456</CantMG>
+      <Etiquetas>5</Etiquetas>
+      <Comentarios>15</Comentarios>
+      <Resolucion>65</Resolucion>
+      <Alto>95</Alto>
+      <Ancho>110</Ancho>
+      <Filtro>true</Filtro>
+    </Imagen>
+    <Imagen>
+      <Nombre>Arte callejero</Nombre>
+      <Fecha>2023/08/10</Fecha>
+      <CantMG>321</CantMG>
+      <Etiquetas>8</Etiquetas>
+      <Comentarios>7</Comentarios>
+      <Resolucion>70</Resolucion>
+      <Alto>100</Alto>
+      <Ancho>120</Ancho>
+      <Filtro>true</Filtro>
+    </Imagen>
+    <Imagen>
       <Nombre>Bosque</Nombre>
-      <Fecha>202305019</Fecha>
+      <Fecha>2023/08/12</Fecha>
       <CantMG>0</CantMG>
       <Etiquetas>4</Etiquetas>
       <Comentarios>3</Comentarios>
@@ -200,7 +255,7 @@
     </Imagen>
     <Imagen>
       <Nombre>Familia</Nombre>
-      <Fecha>20230521</Fecha>
+      <Fecha>2023/08/15</Fecha>
       <CantMG>98</CantMG>
       <Etiquetas>1</Etiquetas>
       <Comentarios>0</Comentarios>
@@ -211,7 +266,7 @@
     </Imagen>
     <Imagen>
       <Nombre>Mascota</Nombre>
-      <Fecha>20230530</Fecha>
+      <Fecha>2023/08/17</Fecha>
       <CantMG>776</CantMG>
       <Etiquetas>4</Etiquetas>
       <Comentarios>3</Comentarios>
@@ -222,8 +277,8 @@
     </Imagen>
     <Imagen>
       <Nombre>Vacaciones</Nombre>
-      <Fecha>20230531</Fecha>
-      <CantMG>90</CantMG>
+      <Fecha>2023/08/19</Fecha>
+      <CantMG>91</CantMG>
       <Etiquetas>8</Etiquetas>
       <Comentarios>7</Comentarios>
       <Resolucion>40</Resolucion>
@@ -233,7 +288,7 @@
     </Imagen>
     <Imagen>
       <Nombre>Compu</Nombre>
-      <Fecha>20230603</Fecha>
+      <Fecha>2023/08/20</Fecha>
       <CantMG>89</CantMG>
       <Etiquetas>7</Etiquetas>
       <Comentarios>7</Comentarios>
@@ -243,8 +298,30 @@
       <Filtro>false</Filtro>
     </Imagen>
     <Imagen>
+      <Nombre>Aventura en la selva</Nombre>
+      <Fecha>2023/08/21</Fecha>
+      <CantMG>178</CantMG>
+      <Etiquetas>7</Etiquetas>
+      <Comentarios>11</Comentarios>
+      <Resolucion>60</Resolucion>
+      <Alto>85</Alto>
+      <Ancho>95</Ancho>
+      <Filtro>true</Filtro>
+    </Imagen>
+    <Imagen>
+      <Nombre>Explorando la ciudad</Nombre>
+      <Fecha>2023/08/22</Fecha>
+      <CantMG>289</CantMG>
+      <Etiquetas>6</Etiquetas>
+      <Comentarios>8</Comentarios>
+      <Resolucion>50</Resolucion>
+      <Alto>70</Alto>
+      <Ancho>80</Ancho>
+      <Filtro>true</Filtro>
+    </Imagen>
+    <Imagen>
       <Nombre>Noche</Nombre>
-      <Fecha>202306010</Fecha>
+      <Fecha>2023/08/23</Fecha>
       <CantMG>222</CantMG>
       <Etiquetas>34</Etiquetas>
       <Comentarios>988</Comentarios>
@@ -255,8 +332,8 @@
     </Imagen>
     <Imagen>
       <Nombre>Tarde</Nombre>
-      <Fecha>20230611</Fecha>
-      <CantMG>90</CantMG>
+      <Fecha>2023/08/24</Fecha>
+      <CantMG>928</CantMG>
       <Etiquetas>4</Etiquetas>
       <Comentarios>0</Comentarios>
       <Resolucion>90</Resolucion>
@@ -266,8 +343,8 @@
     </Imagen>
     <Imagen>
       <Nombre>Trabajo</Nombre>
-      <Fecha>20230612</Fecha>
-      <CantMG>90</CantMG>
+      <Fecha>2023/08/25</Fecha>
+      <CantMG>393</CantMG>
       <Etiquetas>8</Etiquetas>
       <Comentarios>6</Comentarios>
       <Resolucion>20</Resolucion>
@@ -277,8 +354,8 @@
     </Imagen>
     <Audio>
       <Nombre>Informacion</Nombre>
-      <Fecha>20230709</Fecha>
-      <CantMG>90</CantMG>
+      <Fecha>2023/07/09</Fecha>
+      <CantMG>96</CantMG>
       <Etiquetas>0</Etiquetas>
       <Comentarios>0</Comentarios>
       <Duracion>8</Duracion>
@@ -286,8 +363,8 @@
     </Audio>
     <Audio>
       <Nombre>Cancion</Nombre>
-      <Fecha>20230709</Fecha>
-      <CantMG>98</CantMG>
+      <Fecha>2023/07/09</Fecha>
+      <CantMG>45</CantMG>
       <Etiquetas>4</Etiquetas>
       <Comentarios>4</Comentarios>
       <Duracion>180</Duracion>
@@ -295,8 +372,8 @@
     </Audio>
     <Audio>
       <Nombre>Poema</Nombre>
-      <Fecha>20230710</Fecha>
-      <CantMG>78</CantMG>
+      <Fecha>2023/07/10</Fecha>
+      <CantMG>878</CantMG>
       <Etiquetas>30</Etiquetas>
       <Comentarios>5</Comentarios>
       <Duracion>90</Duracion>
@@ -313,8 +390,8 @@
     </Audio>
     <Audio>
       <Nombre>Comunicado</Nombre>
-      <Fecha>20230819</Fecha>
-      <CantMG>89</CantMG>
+      <Fecha>2023/08/19</Fecha>
+      <CantMG>69</CantMG>
       <Etiquetas>1</Etiquetas>
       <Comentarios>2</Comentarios>
       <Duracion>20</Duracion>
@@ -322,8 +399,8 @@
     </Audio>
     <Audio>
       <Nombre>Rima</Nombre>
-      <Fecha>20230820</Fecha>
-      <CantMG>90</CantMG>
+      <Fecha>2023/08/20</Fecha>
+      <CantMG>22</CantMG>
       <Etiquetas>2</Etiquetas>
       <Comentarios>1</Comentarios>
       <Duracion>77</Duracion>
@@ -331,11 +408,65 @@
     </Audio>
     <Audio>
       <Nombre>Saludo</Nombre>
-      <Fecha>20230826</Fecha>
-      <CantMG>90</CantMG>
+      <Fecha>2023/08/26</Fecha>
+      <CantMG>187</CantMG>
       <Etiquetas>1</Etiquetas>
       <Comentarios>0</Comentarios>
       <Duracion>9</Duracion>
+      <Velocidad>9</Velocidad>
+    </Audio>
+    <Audio>
+      <Nombre>Podcast de noticias</Nombre>
+      <Fecha>2023/09/01</Fecha>
+      <CantMG>47</CantMG>
+      <Etiquetas>4</Etiquetas>
+      <Comentarios>8</Comentarios>
+      <Duracion>60</Duracion>
+      <Velocidad>8</Velocidad>
+    </Audio>
+    <Audio>
+      <Nombre>Música relajante</Nombre>
+      <Fecha>2023/09/03</Fecha>
+      <CantMG>63</CantMG>
+      <Etiquetas>5</Etiquetas>
+      <Comentarios>5</Comentarios>
+      <Duracion>120</Duracion>
+      <Velocidad>7</Velocidad>
+    </Audio>
+    <Audio>
+      <Nombre>Entrevista a un experto</Nombre>
+      <Fecha>2023/09/04</Fecha>
+      <CantMG>38</CantMG>
+      <Etiquetas>7</Etiquetas>
+      <Comentarios>10</Comentarios>
+      <Duracion>80</Duracion>
+      <Velocidad>9</Velocidad>
+    </Audio>
+    <Audio>
+      <Nombre>Podcast de comedia</Nombre>
+      <Fecha>2023/09/05</Fecha>
+      <CantMG>55</CantMG>
+      <Etiquetas>4</Etiquetas>
+      <Comentarios>9</Comentarios>
+      <Duracion>70</Duracion>
+      <Velocidad>7</Velocidad>
+    </Audio>
+    <Audio>
+      <Nombre>Piano improvisado</Nombre>
+      <Fecha>2023/09/07</Fecha>
+      <CantMG>899</CantMG>
+      <Etiquetas>5</Etiquetas>
+      <Comentarios>8</Comentarios>
+      <Duracion>120</Duracion>
+      <Velocidad>8</Velocidad>
+    </Audio>
+    <Audio>
+      <Nombre>Reseña de libro</Nombre>
+      <Fecha>2023/09/09</Fecha>
+      <CantMG>67</CantMG>
+      <Etiquetas>7</Etiquetas>
+      <Comentarios>10</Comentarios>
+      <Duracion>80</Duracion>
       <Velocidad>9</Velocidad>
     </Audio>
 </Publicaciones>

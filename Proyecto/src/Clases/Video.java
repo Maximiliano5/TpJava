@@ -13,7 +13,7 @@ public class Video extends Publicacion implements Durable,Filtrable{
 
 
     //constructor
-    public Video(int duracion, int resolucion, int fps, int tiempoact, boolean reproduciendo, boolean Filtro, String n, long f, int cant, int e, int com){
+    public Video(int duracion, int resolucion, int fps, int tiempoact, boolean reproduciendo, boolean Filtro, String n, String f, int cant, int e, int com) {
         super(n, f, cant, e, com);
         this.duracion = duracion;
         this.resolucion = resolucion;

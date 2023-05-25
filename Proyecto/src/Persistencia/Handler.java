@@ -31,7 +31,7 @@ public class Handler extends DefaultHandler{
                 Publica.setNombre(Buffer.toString());
                 break;
             case "Fecha":
-                Publica.setFecha(Long.parseLong(Buffer.toString()));
+                Publica.setFecha(Buffer.toString());
                 break;
             case "CantMG":
                 Publica.setCantMG(Integer.parseInt(Buffer.toString()));
@@ -84,15 +84,15 @@ public class Handler extends DefaultHandler{
         super.startElement(uri, localName, qName, attributes);
         switch (qName) {
             case "video":
-                Publica = new Video(0, 0, 0, 0, false, false, "sin", 0, 0, 0, 0);
+                Publica = new Video(0, 0, 0, 0, false, false, "sin", "sin", 0, 0, 0);
                 Publicaciones.add(Publica);
                 break;
             case "Imagen":
-                Publica = new Imagen(0, 0, 0, false, "sin", 0, 0, 0, 0);
+                Publica = new Imagen(0, 0, 0, false, "sin", "sin", 0, 0, 0);
                 Publicaciones.add(Publica);
                 break;
             case "Audio":
-                Publica = new Audio(0, 0, 0, false, "sin", 0, 0, 0, 0);
+                Publica = new Audio(0, 0, 0, false, "sin", "sin", 0, 0, 0);
                 Publicaciones.add(Publica);
                 break;
             case "Nombre":

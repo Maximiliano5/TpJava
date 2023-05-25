@@ -60,15 +60,15 @@ public class Reporte{
 
     return reporte.toString();
 }
-    private static void generarReporteAlbum(Album album, BufferedWriter writer, long fechaInicio, long fechaFin) throws IOException {
+    private static void generarReporteAlbum(Album album, BufferedWriter writer, String fechaInicio, String fechaFin) throws IOException {
     writer.write("Álbum: " + album.getNombreAlbum() + "\n");
 
     int cantPublicaciones = 0;
 
     for (Publicacion publicacion : album.getLpubli()) {
-        long fechaPublicacion = publicacion.getFecha();
+        String fechaPublicacion = publicacion.getFecha();
 
-        if (fechaPublicacion >= fechaInicio && fechaPublicacion <= fechaFin) {
+        if (fechaPublicacion.compareTo(fechaInicio) >= 0 && fechaPublicacion.compareTo(fechaFin) <= 0) {
             cantPublicaciones++;
             int cantComentarios = publicacion.getComentarios();
 
@@ -87,7 +87,7 @@ public class Reporte{
     }
 }
 
-private static String generarReporteAlbumes(String nombreArchivo, List<Album> albumList, long fechaInicio, long fechaFin) {
+private static String generarReporteAlbumes(String nombreArchivo, List<Album> albumList, String fechaInicio, String fechaFin) {
     StringBuilder reporte = new StringBuilder();
 
     try {
@@ -118,10 +118,13 @@ private static String generarReporteAlbumes(String nombreArchivo, List<Album> al
 }
 
     //pasarle la lista de album del perfil y la lista de publicaciones filtrada
-    public void reportes(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg,long fechaInicio, long fechaFin,List<Album> albumList )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
+    public void reportesAlbum(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg,String fechaInicio, String fechaFin,List<Album> albumList )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
     {
-        System.out.println(generarReportePubs("ReportePublicaciones.txt",vidList,audList,imgList,cantVideos,promMGVideos,cantAudios,promMGAudios,cantImg,promMGImg));
         System.out.println(generarReporteAlbumes("ReporteAlbumes.txt",albumList,fechaInicio,fechaFin)); 
+    }
+    public void reportesPubs(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
+    {
+        System.out.println(generarReportePubs("ReportePublicaciones.txt",vidList,audList,imgList,cantVideos,promMGVideos,cantAudios,promMGAudios,cantImg,promMGImg)); 
     }
    
 }

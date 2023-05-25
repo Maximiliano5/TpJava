@@ -2,13 +2,13 @@ package Clases;
 
 public abstract class Publicacion {
     private String nombre;
-    private long fecha; //aaaammdd
+    private String fecha; //aaaammdd
     private int cantMG;
     private int etiquetas;
     private int comentarios;
 
     //Constructor
-    public Publicacion(String n, long f, int cant, int e, int com){
+    public Publicacion(String n, String f, int cant, int e, int com){
         nombre=n;
         fecha=f;
         cantMG=cant;
@@ -21,7 +21,7 @@ public abstract class Publicacion {
         return nombre;
     }
 
-    public long getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
@@ -42,7 +42,7 @@ public abstract class Publicacion {
         this.nombre = nombre;
     }
 
-    public void setFecha(long fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 

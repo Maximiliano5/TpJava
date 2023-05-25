@@ -9,13 +9,14 @@ public class Imagen extends Publicacion implements Filtrable{
     private Boolean Filtro;
 
     //constructor
-    public Imagen(int Resolucion, int Alto, int Ancho, Boolean Filtro, String n, long f, int cant, int e, int com) {
+    public Imagen(int Resolucion, int Alto, int Ancho, Boolean Filtro, String n, String f, int cant, int e, int com) {
         super(n, f, cant, e, com);
         this.Resolucion = Resolucion;
         this.Alto = Alto;
         this.Ancho = Ancho;
         this.Filtro = Filtro;
     }
+    
 
 
     //metodo de la interfaz

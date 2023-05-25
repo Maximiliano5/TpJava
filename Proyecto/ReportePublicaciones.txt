@@ -1,0 +1,61 @@
+Reporte de Publicaciones
+
+Videos:
+Publicación 1: Futbol
+Publicación 2: Nieve
+Publicación 3: Fifa
+Publicación 4: Fiesta
+Publicación 5: Italia
+Publicación 6: Qatar
+Publicación 7: F1
+Publicación 8: Laguna
+Publicación 9: Auto
+Publicación 10: Teatro
+Publicación 11: Luna
+Publicación 12: Playa
+Publicación 13: Plaza
+Publicación 14: Ciudad
+Publicación 15: Mar
+Publicación 16: Gym
+
+Cantidad de videos: 16
+Promedio de likes en videos: 257.875
+
+Audios:
+Publicación 1: Piano improvisado
+Publicación 2: Poema
+Publicación 3: Saludo
+Publicación 4: Informacion
+Publicación 5: Comunicado
+Publicación 6: Reseña de libro
+Publicación 7: Música relajante
+Publicación 8: Podcast de comedia
+Publicación 9: Podcast de noticias
+Publicación 10: Cancion
+Publicación 11: Entrevista a un experto
+Publicación 12: Historia
+Publicación 13: Rima
+
+Cantidad de audios: 13
+Promedio de likes en audios: 191.76923
+
+Imágenes:
+Publicación 1: Tarde
+Publicación 2: Mascota
+Publicación 3: Comida deliciosa
+Publicación 4: Trabajo
+Publicación 5: Arte callejero
+Publicación 6: Explorando la ciudad
+Publicación 7: Moda urbana
+Publicación 8: Noche
+Publicación 9: River Boca
+Publicación 10: Aventura en la selva
+Publicación 11: Puesta de sol
+Publicación 12: Familia
+Publicación 13: Vacaciones
+Publicación 14: Compu
+Publicación 15: Amigos en la montaña
+Publicación 16: Bosque
+
+Cantidad de imágenes: 16
+Promedio de likes en imágenes: 281.25

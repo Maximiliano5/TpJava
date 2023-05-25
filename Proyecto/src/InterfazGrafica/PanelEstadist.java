@@ -2,7 +2,6 @@ package InterfazGrafica;
 
 import Clases.Audio;
 import Clases.Imagen;
-import Clases.Perfil;
 import Clases.Video;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -15,21 +14,12 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 
 public class PanelEstadist extends javax.swing.JPanel {
-    private Perfil Perf;
-    private ArrayList<Imagen> imgList;
-    private ArrayList<Video> vidList;
-    private ArrayList<Audio> audList;
 
-    public PanelEstadist(Perfil P) {
+    public PanelEstadist() {
         initComponents();
-        Perf = P;
-        imgList = new ArrayList();
-        vidList = new ArrayList();
-        audList = new ArrayList();
-        Perf.filtraPubli(imgList, vidList, audList);
     }
     
-    public void GraficoCircular(){
+    public void GraficoCircular(ArrayList<Imagen> imgList,ArrayList<Video> vidList,ArrayList<Audio> audList){
         DefaultPieDataset datos = new DefaultPieDataset();
         datos.setValue("Imagenes",imgList.size());
         datos.setValue("Videos",vidList.size());
@@ -44,13 +34,8 @@ public class PanelEstadist extends javax.swing.JPanel {
         repaint();
     }
     
-    public void GeneraBarras(){
-        float I,A,V;
+    public void GeneraBarras(ArrayList<Imagen> imgList,ArrayList<Video> vidList,ArrayList<Audio> audList,float I,float A,float V){
         DefaultCategoryDataset datos = new DefaultCategoryDataset();
-        
-        I = Perf.calcularPromedioLikes(imgList, imgList.size());
-        A = Perf.calcularPromedioLikes(audList, audList.size());
-        V = Perf.calcularPromedioLikes(vidList, vidList.size());
         datos.setValue(I,"prom. likes","Imagen");
         datos.setValue(A,"prom. likes","Audios");
         datos.setValue(V,"prom. likes","Videos");
