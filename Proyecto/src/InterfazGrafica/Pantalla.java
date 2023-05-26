@@ -3,6 +3,7 @@ package InterfazGrafica;
 import Clases.Audio;
 import Clases.Imagen;
 import Clases.Perfil;
+import Clases.Publicacion;
 import Clases.Video;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -73,7 +74,6 @@ public class Pantalla extends javax.swing.JFrame {
         ButtonPubli.setBackground(new java.awt.Color(0, 51, 153));
         ButtonPubli.setForeground(new java.awt.Color(255, 255, 255));
         ButtonPubli.setText("Publicaciones");
-        ButtonPubli.setBorder(null);
         ButtonPubli.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonPubli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +84,6 @@ public class Pantalla extends javax.swing.JFrame {
         ButtonEstadist.setBackground(new java.awt.Color(0, 51, 153));
         ButtonEstadist.setForeground(new java.awt.Color(255, 255, 255));
         ButtonEstadist.setText("Estadisticas");
-        ButtonEstadist.setBorder(null);
         ButtonEstadist.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ButtonEstadist.setPreferredSize(new java.awt.Dimension(47, 16));
         ButtonEstadist.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +95,6 @@ public class Pantalla extends javax.swing.JFrame {
         ButtonAlbum.setBackground(new java.awt.Color(0, 51, 153));
         ButtonAlbum.setForeground(new java.awt.Color(255, 255, 255));
         ButtonAlbum.setText("Albumes");
-        ButtonAlbum.setBorder(null);
         ButtonAlbum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAlbumActionPerformed(evt);
@@ -125,7 +123,6 @@ public class Pantalla extends javax.swing.JFrame {
         ButtonReporte.setBackground(new java.awt.Color(0, 51, 153));
         ButtonReporte.setForeground(new java.awt.Color(255, 255, 255));
         ButtonReporte.setText("Reporte");
-        ButtonReporte.setBorder(null);
         ButtonReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonReporteActionPerformed(evt);
@@ -203,7 +200,7 @@ public class Pantalla extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Contenido.setBackground(new java.awt.Color(255, 255, 255));
+        Contenido.setBackground(new java.awt.Color(51, 51, 51));
         Contenido.setPreferredSize(new java.awt.Dimension(497, 662));
 
         javax.swing.GroupLayout ContenidoLayout = new javax.swing.GroupLayout(Contenido);
@@ -252,7 +249,8 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonPubliActionPerformed
 
     private void ButtonAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAlbumActionPerformed
-        PanelAlbum P2 = new PanelAlbum(); 
+        PanelAlbum P2 = new PanelAlbum(Per.getAlbumList(),Per.getPubList()); 
+        P2.CargaPublicaciones((ArrayList<Publicacion>) Per.getPubList());
         ShowPanel(P2);
     }//GEN-LAST:event_ButtonAlbumActionPerformed
 

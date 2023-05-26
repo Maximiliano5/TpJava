@@ -1,13 +1,8 @@
 package Clases;
-import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.TreeSet;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Collections;
 
 public class Perfil {
     private String Nombre;
@@ -16,11 +11,11 @@ public class Perfil {
     private int Seguidos;
     private int Publicaciones;
     private ArrayList<Publicacion> pubList;  
-    private List<Album> albumList;
+    private ArrayList<Album> albumList;
     
     //constructor
 
-    public Perfil(String Nombre, String Apellido, int Seguidores, int Seguidos, ArrayList<Publicacion> pubList, List<Album> albumList) {
+    public Perfil(String Nombre, String Apellido, int Seguidores, int Seguidos, ArrayList<Publicacion> pubList, ArrayList<Album> albumList) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Seguidores = Seguidores;
@@ -49,11 +44,11 @@ public class Perfil {
         return Seguidos;
     }
 
-    public List<Publicacion> getPubList() {
+    public ArrayList<Publicacion> getPubList() {
         return pubList;
     }
 
-    public List<Album> getAlbumList() {
+    public ArrayList<Album> getAlbumList() {
         return albumList;
     } 
 
@@ -83,7 +78,7 @@ public class Perfil {
         this.pubList = pubList;
     }
 
-    public void setAlbumList(List<Album> albumList) {
+    public void setAlbumList(ArrayList<Album> albumList) {
         this.albumList = albumList;
     }  
     public void eliminar()//elimina de forma recursiva los subalbumes
@@ -95,10 +90,6 @@ public class Perfil {
     }  
     public void filtraPubli(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList)
     {
-        TreeSet<Publicacion> mgDescendente = new TreeSet<>(Comparator.comparingInt(Publicacion::getCantMG).reversed());
-        mgDescendente.addAll(pubList);
-        pubList.clear();
-        pubList.addAll(mgDescendente);
         for(Publicacion auxp:pubList)
         {
             if(auxp instanceof Imagen)
@@ -108,6 +99,9 @@ public class Perfil {
             else
                 vidList.add((Video)auxp);
         }
+        Collections.sort(imgList, Collections.reverseOrder(Comparator.comparingInt(Imagen::getCantMG)));
+        Collections.sort(audList, Collections.reverseOrder(Comparator.comparingInt(Audio::getCantMG)));
+        Collections.sort(vidList, Collections.reverseOrder(Comparator.comparingInt(Video::getCantMG)));
     }
      public float calcularPromedioLikes(List<? extends Publicacion> listaPublicaciones,int cantidadPubs) {
         if (listaPublicaciones.isEmpty()) {

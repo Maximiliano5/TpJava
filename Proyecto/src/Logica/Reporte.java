@@ -1,4 +1,4 @@
-package Logica;
+ package Logica;
 
 import Clases.Album;
 import Clases.Audio;
@@ -60,36 +60,38 @@ public class Reporte{
 
     return reporte.toString();
 }
-    private static void generarReporteAlbum(Album album, BufferedWriter writer, String fechaInicio, String fechaFin) throws IOException {
-    writer.write("Álbum: " + album.getNombreAlbum() + "\n");
-
+   private static void generarReporteAlbum(Album album, BufferedWriter writer, String fechaInicio, String fechaFin,String reporteGrafico) throws IOException {
+    String nombreAlbum=album.getNombreAlbum();
+    writer.write("Álbum: " + nombreAlbum + "\n");
+    reporteGrafico+="Álbum: "+ nombreAlbum +"\n";
     int cantPublicaciones = 0;
-
+    int cantComentarios=0;
     for (Publicacion publicacion : album.getLpubli()) {
         String fechaPublicacion = publicacion.getFecha();
 
         if (fechaPublicacion.compareTo(fechaInicio) >= 0 && fechaPublicacion.compareTo(fechaFin) <= 0) {
             cantPublicaciones++;
-            int cantComentarios = publicacion.getComentarios();
-
+            int cantComentariosxPubli = publicacion.getComentarios();
             writer.write("Publicación: " + publicacion.getNombre() + "\n");
-            writer.write("Cantidad de comentarios: " + cantComentarios + "\n\n");
+            writer.write("Cantidad de comentarios: " + cantComentariosxPubli + "\n\n");
+            cantComentarios+=cantComentariosxPubli;
         }
     }
-
+    reporteGrafico+="Cantidad de publicaciones: "+ cantPublicaciones +"\n";
+    reporteGrafico+="Cantidad de comentarios: "+ cantComentarios +"\n";
     writer.write("Cantidad de publicaciones: " + cantPublicaciones + "\n\n");
 
     List<Album> subAlbums = album.getAlbumList();
     Collections.sort(subAlbums, (a1, a2) -> a1.getNombreAlbum().compareToIgnoreCase(a2.getNombreAlbum()));
 
     for (Album subAlbum : subAlbums) {
-        generarReporteAlbum(subAlbum, writer, fechaInicio, fechaFin);
+        generarReporteAlbum(subAlbum, writer, fechaInicio, fechaFin, reporteGrafico);
     }
 }
 
-private static String generarReporteAlbumes(String nombreArchivo, List<Album> albumList, String fechaInicio, String fechaFin) {
+private static String generarReporteAlbumes(String nombreArchivo, List<Album> albumList, String fechaInicio, String fechaFin, String reporteGrafico) {
     StringBuilder reporte = new StringBuilder();
-
+   
     try {
         // Verificar si el archivo ya existe y eliminarlo si es necesario
         File archivo = new File(nombreArchivo);
@@ -104,7 +106,8 @@ private static String generarReporteAlbumes(String nombreArchivo, List<Album> al
         Collections.sort(albumList, (a1, a2) -> a1.getNombreAlbum().compareToIgnoreCase(a2.getNombreAlbum()));
 
         for (Album album : albumList) {
-            generarReporteAlbum(album, writer, fechaInicio, fechaFin);
+           
+            generarReporteAlbum(album, writer, fechaInicio, fechaFin,reporteGrafico);
         }
 
         writer.close();
@@ -120,11 +123,13 @@ private static String generarReporteAlbumes(String nombreArchivo, List<Album> al
     //pasarle la lista de album del perfil y la lista de publicaciones filtrada
     public void reportesAlbum(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg,String fechaInicio, String fechaFin,List<Album> albumList )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
     {
-        System.out.println(generarReporteAlbumes("ReporteAlbumes.txt",albumList,fechaInicio,fechaFin)); 
+        String reporteGrafico="";
+        System.out.println(generarReporteAlbumes("ReporteAlbumes.txt",albumList,fechaInicio,fechaFin,reporteGrafico));
+        System.out.println(reporteGrafico);
     }
     public void reportesPubs(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
     {
-        System.out.println(generarReportePubs("ReportePublicaciones.txt",vidList,audList,imgList,cantVideos,promMGVideos,cantAudios,promMGAudios,cantImg,promMGImg)); 
+        System.out.println(generarReportePubs("ReportePublicaciones.txt",vidList,audList,imgList,cantVideos,promMGVideos,cantAudios,promMGAudios,cantImg,promMGImg));
     }
-   
+    
 }
