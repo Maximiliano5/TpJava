@@ -1,12 +1,14 @@
 package Clases;
 
 import Interfaces.Filtrable;
+import Logica.Main.Filtro;
 
 public class Imagen extends Publicacion implements Filtrable{
     private int Resolucion;
     private int Alto;
     private int Ancho;
     private Boolean Filtro;
+    private Filtro filtroPubli;
 
     //constructor
     public Imagen(int Resolucion, int Alto, int Ancho, Boolean Filtro, String n, String f, int cant, int e, int com) {

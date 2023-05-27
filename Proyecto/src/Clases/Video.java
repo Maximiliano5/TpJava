@@ -2,6 +2,7 @@ package Clases;
 
 import Interfaces.Durable;
 import Interfaces.Filtrable;
+import Logica.Main.Filtro;
 
 public class Video extends Publicacion implements Durable,Filtrable{
    private int duracion;//segundos
@@ -10,6 +11,7 @@ public class Video extends Publicacion implements Durable,Filtrable{
    private  int tiempoact;
    private  boolean reproduciendo;
    private boolean Filtro;
+   private Filtro filtroPubli;
 
 
     //constructor

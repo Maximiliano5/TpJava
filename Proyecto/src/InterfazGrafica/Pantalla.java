@@ -15,6 +15,7 @@ public class Pantalla extends javax.swing.JFrame {
     private ArrayList<Imagen> imgList;
     private ArrayList<Video> vidList;
     private ArrayList<Audio> audList;
+    private ArrayList<Publicacion> mas100List;
     float I,A,V;
 
     public Pantalla(Perfil Perf) {
@@ -23,6 +24,7 @@ public class Pantalla extends javax.swing.JFrame {
         imgList = new ArrayList();
         vidList = new ArrayList();
         audList = new ArrayList();
+        mas100List = Per.masComentados();
         Per.filtraPubli(imgList, vidList, audList);
         I = Per.calcularPromedioLikes(imgList, imgList.size());
         A = Per.calcularPromedioLikes(audList, audList.size());
@@ -244,8 +246,9 @@ public class Pantalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonPubliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPubliActionPerformed
-        PanelPublic P1 = new PanelPublic();
+        PanelPublic P1 = new PanelPublic(imgList,vidList,audList,mas100List,Per.getPubList());
         ShowPanel(P1);
+        P1.Carga(Per.getPubList());
     }//GEN-LAST:event_ButtonPubliActionPerformed
 
     private void ButtonAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAlbumActionPerformed
