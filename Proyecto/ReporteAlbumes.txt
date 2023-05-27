@@ -1,2 +1,38 @@
 Reporte de Álbumes
 
+Álbum: ALBUM-Autos
+Publicación: Auto
+Cantidad de comentarios: 90
+
+Publicación: Bosque
+Cantidad de comentarios: 3
+
+Publicación: Cancion
+Cantidad de comentarios: 4
+
+Publicación: Ciudad
+Cantidad de comentarios: 3
+
+Cantidad de publicaciones: 4
+
+Álbum: ALBUM-Camiones
+Publicación: Laguna
+Cantidad de comentarios: 4
+
+Cantidad de publicaciones: 1
+
+Álbum: ALBUM-Camionetas
+Publicación: Trabajo
+Cantidad de comentarios: 6
+
+Publicación: Vacaciones
+Cantidad de comentarios: 7
+
+Publicación: Tarde
+Cantidad de comentarios: 0
+
+Cantidad de publicaciones: 3
+
+Álbum: ALBUM-Motos
+Cantidad de publicaciones: 0
+

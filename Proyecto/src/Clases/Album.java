@@ -26,7 +26,7 @@ public class Album {
         return Lpubli;
     }
 
-    public List<Album> getAlbumList() {
+    public ArrayList<Album> getSubAlbum() {
         return subAlbum;
     }
     
@@ -47,16 +47,21 @@ public class Album {
         Album Sub = new Album(Nom);
         subAlbum.add(Sub);
     }
-    public void agregaPublicacion(String Nom,ArrayList<Publicacion> Public)
+    public boolean agregaPublicacion(String Nom,ArrayList<Publicacion> Public)
     {
         int i=0;
-        while(i<Public.size() && (Nom.compareTo(Public.get(i).getNombre()))<0){
+        while(i<Public.size() && (Nom.compareTo(Public.get(i).getNombre()))!=0){
            i++;
         }
-        if(Nom.compareTo(Public.get(i).getNombre())==0)
-          Lpubli.add(Public.get(i));  
-        else
+        if(Nom.compareTo(Public.get(i).getNombre())==0){
+          Lpubli.add(Public.get(i));
+          System.out.println("se agrego la Publicacion");
+          return true;
+          
+        }else{
           System.out.println("No existe esa Publicacion");
+          return false;
+        }
     }
     public void eliminarSubAlbum(String NomSub)
     {
@@ -83,22 +88,18 @@ public class Album {
         }
         subAlbum.clear();
     }  
-    public DefaultMutableTreeNode buscarNodoAlbum(DefaultMutableTreeNode nodoRaiz, String nombreBuscado) {
-      if (nodoRaiz.getUserObject() instanceof Album) {
-          Album album = (Album) nodoRaiz.getUserObject();
-          if (album.getNombreAlbum().equals(nombreBuscado)) {
-              return nodoRaiz;
-            }
-        }
-    
-      for (int i = 0; i < nodoRaiz.getChildCount(); i++) {
-          DefaultMutableTreeNode nodoHijo = (DefaultMutableTreeNode) nodoRaiz.getChildAt(i);
-          DefaultMutableTreeNode nodoEncontrado = buscarNodoAlbum(nodoHijo, nombreBuscado);
-          if (nodoEncontrado != null) {
-              return nodoEncontrado;
-            }
-        }
-    
-    return null; // El álbum no se encontró en la estructura anidada
-   }
+    public Album buscarAlbum(Album nodoRaiz, String nombreBuscado) {
+       if (nodoRaiz.getNombreAlbum().equals(nombreBuscado)) {
+           return nodoRaiz;
+       }
+
+       for (Album subAlbum : nodoRaiz.getSubAlbum()) {
+           Album nodoEncontrado = buscarAlbum(subAlbum, nombreBuscado);
+           if (nodoEncontrado != null) {
+               return nodoEncontrado;
+           }
+       }
+
+       return null; // El álbum no se encontró en la estructura anidada
+    }
 }

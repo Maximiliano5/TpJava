@@ -81,7 +81,7 @@ public class Reporte{
     reporteGrafico+="Cantidad de comentarios: "+ cantComentarios +"\n";
     writer.write("Cantidad de publicaciones: " + cantPublicaciones + "\n\n");
 
-    List<Album> subAlbums = album.getAlbumList();
+    List<Album> subAlbums = album.getSubAlbum();
     Collections.sort(subAlbums, (a1, a2) -> a1.getNombreAlbum().compareToIgnoreCase(a2.getNombreAlbum()));
 
     for (Album subAlbum : subAlbums) {
@@ -121,7 +121,7 @@ private static String generarReporteAlbumes(String nombreArchivo, List<Album> al
 }
 
     //pasarle la lista de album del perfil y la lista de publicaciones filtrada
-    public void reportesAlbum(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList, int cantVideos, float promMGVideos,int cantAudios, float promMGAudios,int cantImg,float promMGImg,String fechaInicio, String fechaFin,List<Album> albumList )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
+    public void reportesAlbum(String fechaInicio, String fechaFin,List<Album> albumList )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
     {
         String reporteGrafico="";
         System.out.println(generarReporteAlbumes("ReporteAlbumes.txt",albumList,fechaInicio,fechaFin,reporteGrafico));

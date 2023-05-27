@@ -1,0 +1,11 @@
+Reporte de Álbumes
+
+Álbum: ALBUM-Autos
+Cantidad de publicaciones: 0
+
+Álbum: ALBUM-Camiones
+Cantidad de publicaciones: 0
+
+Álbum: ALBUM-Motos
+Cantidad de publicaciones: 0
+

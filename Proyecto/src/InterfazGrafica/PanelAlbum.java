@@ -10,31 +10,30 @@ import javax.swing.tree.DefaultTreeModel;
 
 public class PanelAlbum extends javax.swing.JPanel {
    private Reporte Rep;
-   private ArrayList<Album> Albu;
+   private Album Album1;
    private ArrayList<Publicacion> Public;
    private DefaultTreeModel modelTree;
    private DefaultMutableTreeNode nodoSelec;
 
-    public PanelAlbum(ArrayList<Album> A,ArrayList<Publicacion> P) {
+    public PanelAlbum(ArrayList<Publicacion> P) {
         initComponents();
         Rep = new Reporte();
         Public = P;
-        modelTree = new DefaultTreeModel(new DefaultMutableTreeNode("Album1"));
+        modelTree = new DefaultTreeModel(new DefaultMutableTreeNode("ALBUMES"));
         TreeArbol.setModel(modelTree);
-        Albu = A;
-        Album Album1 = new Album("Album1");
-        A.add(Album1);
+        Album1 = new Album("ALBUMES");
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         TreeArbol = new javax.swing.JTree();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablePublicacion = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         TextCrea = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -43,11 +42,26 @@ public class PanelAlbum extends javax.swing.JPanel {
         ButtonAgrega = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        Fechaini = new javax.swing.JTextField();
+        Fechafin = new javax.swing.JTextField();
+        ButtonReporte = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        ButtonBorrar = new javax.swing.JButton();
+        ButtonBorrarP = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
 
         setBackground(new java.awt.Color(51, 51, 51));
         setForeground(new java.awt.Color(255, 255, 255));
@@ -76,19 +90,16 @@ public class PanelAlbum extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(TablePublicacion);
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Albumes");
-
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Crear Album");
 
-        TextCrea.setForeground(new java.awt.Color(204, 204, 204));
-        TextCrea.setText("Nombre");
+        TextCrea.setForeground(new java.awt.Color(51, 51, 51));
+        TextCrea.setText("Nombre album");
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Agregar Publicacion");
 
-        TextAgrega.setForeground(new java.awt.Color(204, 204, 204));
+        TextAgrega.setForeground(new java.awt.Color(51, 51, 51));
         TextAgrega.setText("Nombre publicacion");
         TextAgrega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,25 +131,30 @@ public class PanelAlbum extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Generar Reporte:");
 
-        jTextField3.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField3.setText("Fecha Inicial");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Fechaini.setForeground(new java.awt.Color(51, 51, 51));
+        Fechaini.setText("Fecha Inicial");
+        Fechaini.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                FechainiActionPerformed(evt);
             }
         });
 
-        jTextField4.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField4.setText("Fecha final");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        Fechafin.setForeground(new java.awt.Color(51, 51, 51));
+        Fechafin.setText("Fecha final");
+        Fechafin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                FechafinActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Generar reporte");
+        ButtonReporte.setBackground(new java.awt.Color(102, 102, 102));
+        ButtonReporte.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonReporte.setText("Generar reporte");
+        ButtonReporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonReporteActionPerformed(evt);
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -153,92 +169,111 @@ public class PanelAlbum extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(jTable2);
 
+        ButtonBorrar.setBackground(new java.awt.Color(102, 102, 102));
+        ButtonBorrar.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonBorrar.setText("Borrar Album");
+        ButtonBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonBorrarActionPerformed(evt);
+            }
+        });
+
+        ButtonBorrarP.setBackground(new java.awt.Color(102, 102, 102));
+        ButtonBorrarP.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonBorrarP.setText("Borrar Publicacion");
+        ButtonBorrarP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonBorrarPActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(298, 298, 298)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(53, 53, 53))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(257, 257, 257)
-                        .addComponent(ButtonAgrega, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(89, 89, 89))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(220, 220, 220)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(187, 187, 187))
             .addComponent(jScrollPane1)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(36, 36, 36)
-                .addComponent(jTextField3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField4)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addComponent(jScrollPane3)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel5)
+                .addGap(41, 41, 41)
+                .addComponent(Fechaini, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Fechafin, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
+                .addComponent(ButtonReporte, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ButtonBorrarP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TextAgrega)
                             .addComponent(TextCrea)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(40, 40, 40))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(ButtonCrea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ButtonAgrega, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonCrea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(82, 82, 82))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(98, 98, 98))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(87, 87, 87)
+                                .addComponent(jLabel3)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(29, 29, 29))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TextCrea)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ButtonCrea, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TextAgrega)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ButtonAgrega, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(78, 78, 78))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonBorrarP, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)))
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField4)
-                        .addComponent(jTextField3)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ButtonReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Fechafin)
+                            .addComponent(Fechaini)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)))
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -272,13 +307,13 @@ public class PanelAlbum extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextAgregaActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void FechafinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechafinActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_FechafinActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void FechainiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechainiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_FechainiActionPerformed
 
     private void TreeArbolValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_TreeArbolValueChanged
         nodoSelec=(DefaultMutableTreeNode) TreeArbol.getLastSelectedPathComponent();
@@ -286,32 +321,74 @@ public class PanelAlbum extends javax.swing.JPanel {
 
     private void ButtonCreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreaActionPerformed
         String Selecnodo = nodoSelec.toString();
-        Album albumRaiz = Albu.get(0);  // Obtener el primer elemento del ArrayList
-        DefaultMutableTreeNode nodoRaiz = new DefaultMutableTreeNode(albumRaiz);
-        DefaultMutableTreeNode nodoEncon = Albu.get(0).buscarNodoAlbum(nodoRaiz, Selecnodo);
-        Album albumEncon = (Album) nodoEncon.getUserObject();
-        albumEncon.agregaSubAlbum(Selecnodo);
-        String text=this.TextCrea.getText();
-        DefaultMutableTreeNode n=new DefaultMutableTreeNode(text);
-        if(nodoSelec!=null){
-          modelTree.insertNodeInto(n,nodoSelec,nodoSelec.getChildCount());
-        }
+        if(Selecnodo.startsWith("ALBUM-") || Selecnodo.startsWith("ALBUMES")){
+          String AlbumText = "ALBUM-";
+          String text=this.TextCrea.getText();
+          text = AlbumText+text;
+          Album nodoEncon = Album1.buscarAlbum(Album1, Selecnodo);
+          nodoEncon.agregaSubAlbum(text);
+          DefaultMutableTreeNode n=new DefaultMutableTreeNode(text);
+          if(nodoSelec!=null){
+            modelTree.insertNodeInto(n,nodoSelec,nodoSelec.getChildCount());
+          }
+        }else
+           System.out.println("No se puede crear un Album dentro de una publicacion"); 
     }//GEN-LAST:event_ButtonCreaActionPerformed
 
     private void ButtonAgregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgregaActionPerformed
-        // TODO add your handling code here:
+        String Selecnodo = nodoSelec.toString();
+        if(Selecnodo.startsWith("ALBUM-")){
+          String text=this.TextAgrega.getText();
+          Album nodoEncon = Album1.buscarAlbum(Album1, Selecnodo);
+          if(nodoEncon.agregaPublicacion(text, Public)){
+            DefaultMutableTreeNode n = new DefaultMutableTreeNode(text);
+            modelTree.insertNodeInto(n, nodoSelec, nodoSelec.getChildCount());
+          }else
+              System.out.println("La Publicacion No existe");
+        }else
+            System.out.println("No podes guardar una publicacion dentro de otra");
     }//GEN-LAST:event_ButtonAgregaActionPerformed
+
+    private void ButtonReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonReporteActionPerformed
+        String fechaini=this.Fechaini.getText();
+        String fechafin=this.Fechafin.getText(); 
+        Rep.reportesAlbum(fechaini,fechafin,Album1.getSubAlbum());
+    }//GEN-LAST:event_ButtonReporteActionPerformed
+
+    private void ButtonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBorrarActionPerformed
+       if(nodoSelec!=null){
+         String Selecnodo = nodoSelec.toString(); 
+         Album nodoEncon = Album1.buscarAlbum(Album1, Selecnodo);
+         nodoEncon.eliminar();
+         modelTree.removeNodeFromParent(nodoSelec);
+       }
+    }//GEN-LAST:event_ButtonBorrarActionPerformed
+
+    private void ButtonBorrarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBorrarPActionPerformed
+       if(nodoSelec!=null){
+         DefaultMutableTreeNode nodoPadre = (DefaultMutableTreeNode) nodoSelec.getParent();
+         String nombrePadre = (String) nodoPadre.getUserObject();
+         String Selecnodo = nodoSelec.toString();  
+         System.out.println(nombrePadre);
+         Album nodoEncon = Album1.buscarAlbum(Album1,nombrePadre);
+         nodoEncon.eliminarPublicacion(Selecnodo);
+         modelTree.removeNodeFromParent(nodoSelec);
+       }
+    }//GEN-LAST:event_ButtonBorrarPActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAgrega;
+    private javax.swing.JButton ButtonBorrar;
+    private javax.swing.JButton ButtonBorrarP;
     private javax.swing.JButton ButtonCrea;
+    private javax.swing.JButton ButtonReporte;
+    private javax.swing.JTextField Fechafin;
+    private javax.swing.JTextField Fechaini;
     private javax.swing.JTable TablePublicacion;
     private javax.swing.JTextField TextAgrega;
     private javax.swing.JTextField TextCrea;
     private javax.swing.JTree TreeArbol;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -319,8 +396,8 @@ public class PanelAlbum extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

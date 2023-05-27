@@ -249,7 +249,7 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonPubliActionPerformed
 
     private void ButtonAlbumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAlbumActionPerformed
-        PanelAlbum P2 = new PanelAlbum(Per.getAlbumList(),Per.getPubList()); 
+        PanelAlbum P2 = new PanelAlbum(Per.getPubList()); 
         P2.CargaPublicaciones((ArrayList<Publicacion>) Per.getPubList());
         ShowPanel(P2);
     }//GEN-LAST:event_ButtonAlbumActionPerformed
