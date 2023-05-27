@@ -3,6 +3,7 @@ package Clases;
 import Interfaces.Durable;
 import Interfaces.Filtrable;
 import Logica.Main.Filtro;
+import java.util.logging.Logger;
 
 public class Video extends Publicacion implements Durable,Filtrable{
    private int duracion;//segundos
@@ -11,7 +12,7 @@ public class Video extends Publicacion implements Durable,Filtrable{
    private  int tiempoact;
    private  boolean reproduciendo;
    private boolean Filtro;
-   private Filtro filtroPubli;
+   private Filtro filtroPubli;  //enum
 
 
     //constructor
@@ -53,13 +54,15 @@ public class Video extends Publicacion implements Durable,Filtrable{
            tiempoact=0;
         }
     }
+   
    @Override
-    public void Filtro(boolean res){ //respuesta si poner filtro: sí o no
-        if (res){
-            Filtro=true;
-        } else{
-            Filtro=false;
-        }
+    public boolean AplicarFiltro(Filtro F) //respuesta si poner filtro: sí o no
+    {
+      if(Filtro){
+        filtroPubli = F;
+        return true;
+      }else
+          return false;
     }
 
     //getters
@@ -86,6 +89,11 @@ public class Video extends Publicacion implements Durable,Filtrable{
     public boolean isFiltro() {
         return Filtro;
     }
+
+    public Filtro getFiltroPubli() {
+        return filtroPubli;
+    }
+    
     
     //setters
     public void setDuracion(int duracion) {

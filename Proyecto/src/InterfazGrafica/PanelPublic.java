@@ -2,8 +2,14 @@ package InterfazGrafica;
 
 import Clases.Audio;
 import Clases.Imagen;
+import Clases.Perfil;
 import Clases.Publicacion;
 import Clases.Video;
+import Logica.Main.Filtro;
+import static Logica.Main.Filtro.Blanco_negro;
+import static Logica.Main.Filtro.Luminoso;
+import static Logica.Main.Filtro.Noche;
+import static Logica.Main.Filtro.Polarizado;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -13,14 +19,17 @@ public class PanelPublic extends javax.swing.JPanel {
     private ArrayList<Video> vidList;
     private ArrayList<Audio> audList;
     private ArrayList<Publicacion> mas100List;
-    private ArrayList<Publicacion> publicList;
-    public PanelPublic(ArrayList<Imagen> img,ArrayList<Video> vid,ArrayList<Audio> aud,ArrayList<Publicacion> mas100,ArrayList<Publicacion> Public) {
+    private Publicacion objPubli;
+    private Perfil objPerf;
+    public PanelPublic(Perfil objP) {
         initComponents();
-        imgList = img;
-        vidList = vid;
-        audList = aud;
-        mas100List = mas100;
-        publicList = Public;
+        objPerf =objP;
+        imgList = new ArrayList();
+        vidList = new ArrayList();
+        audList = new ArrayList();
+        mas100List = new ArrayList();
+        objPerf.filtraPubli(imgList, vidList, audList);
+        mas100List = objPerf.masComentados();
         model = new DefaultTableModel();
         model.addColumn("Nombre");
         model.addColumn("Fecha");
@@ -46,6 +55,30 @@ public class PanelPublic extends javax.swing.JPanel {
        }
     
     }
+    private void AplicarFiltro(Filtro F){
+        String textNomF = TextFiltro.getText();
+        boolean aux;
+        objPubli = objPerf.BuscaPublicacion(textNomF);
+        if(objPubli!=null){
+          if(objPubli instanceof Audio){
+            System.out.println("no se puede aplicar filtros a un Audio");
+          }else{
+             if(objPubli instanceof Imagen){
+               Imagen imagen = (Imagen)objPubli;
+               aux = imagen.AplicarFiltro(F);
+             }else{
+                Video video = (Video)objPubli;
+                aux = video.AplicarFiltro(F);
+             } 
+             if(aux)
+               System.out.println("Se aplico el filtro");
+             else
+               System.out.println("La publicacion no acepta filtros"); 
+          }
+        }else{
+           System.out.println("La publicacion no existe");
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -61,11 +94,11 @@ public class PanelPublic extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        TextFiltro = new javax.swing.JTextField();
+        ButtonBlanNeg = new javax.swing.JButton();
+        ButtonNoche = new javax.swing.JButton();
+        ButtonLuminoso = new javax.swing.JButton();
+        ButtonPolari = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setPreferredSize(new java.awt.Dimension(497, 662));
@@ -137,29 +170,49 @@ public class PanelPublic extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("AplicarFiltro");
 
-        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField1.setText("Nombre Publicacion");
-
-        jButton1.setBackground(new java.awt.Color(102, 102, 102));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Blanco Negro");
-
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Noche");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        TextFiltro.setForeground(new java.awt.Color(51, 51, 51));
+        TextFiltro.setText("Nombre Publicacion");
+        TextFiltro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                TextFiltroActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(102, 102, 102));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Luminoso");
+        ButtonBlanNeg.setBackground(new java.awt.Color(102, 102, 102));
+        ButtonBlanNeg.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonBlanNeg.setText("Blanco Negro");
+        ButtonBlanNeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonBlanNegActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(102, 102, 102));
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Polarizado");
+        ButtonNoche.setBackground(new java.awt.Color(102, 102, 102));
+        ButtonNoche.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonNoche.setText("Noche");
+        ButtonNoche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonNocheActionPerformed(evt);
+            }
+        });
+
+        ButtonLuminoso.setBackground(new java.awt.Color(102, 102, 102));
+        ButtonLuminoso.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonLuminoso.setText("Luminoso");
+        ButtonLuminoso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonLuminosoActionPerformed(evt);
+            }
+        });
+
+        ButtonPolari.setBackground(new java.awt.Color(102, 102, 102));
+        ButtonPolari.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonPolari.setText("Polarizado");
+        ButtonPolari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonPolariActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -173,7 +226,9 @@ public class PanelPublic extends javax.swing.JPanel {
                 .addComponent(ButtonImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ButtonMas100, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(68, 68, 68))
@@ -189,17 +244,16 @@ public class PanelPublic extends javax.swing.JPanel {
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField1)
+                .addComponent(TextFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonBlanNeg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonNoche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonLuminoso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(47, 47, 47))
+                .addComponent(ButtonPolari, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,11 +274,11 @@ public class PanelPublic extends javax.swing.JPanel {
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(TextFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonBlanNeg)
+                    .addComponent(ButtonNoche)
+                    .addComponent(ButtonLuminoso)
+                    .addComponent(ButtonPolari))
                 .addGap(264, 264, 264))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -238,7 +292,7 @@ public class PanelPublic extends javax.swing.JPanel {
     }//GEN-LAST:event_ButtonMas100ActionPerformed
 
     private void ButtonTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonTodosActionPerformed
-        Carga(publicList);
+        Carga(objPerf.getPubList());
     }//GEN-LAST:event_ButtonTodosActionPerformed
 
     private void ButtonImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonImagenActionPerformed
@@ -249,26 +303,46 @@ public class PanelPublic extends javax.swing.JPanel {
         Carga(vidList);
     }//GEN-LAST:event_ButtonVideosActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void ButtonNocheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonNocheActionPerformed
+        Filtro filtro = Noche;
+        AplicarFiltro(filtro);
+    }//GEN-LAST:event_ButtonNocheActionPerformed
+
+    private void TextFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFiltroActionPerformed
+        
+    }//GEN-LAST:event_TextFiltroActionPerformed
+
+    private void ButtonBlanNegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBlanNegActionPerformed
+        Filtro filtro = Blanco_negro;
+        AplicarFiltro(filtro);
+    }//GEN-LAST:event_ButtonBlanNegActionPerformed
+
+    private void ButtonLuminosoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLuminosoActionPerformed
+        Filtro filtro = Luminoso;
+        AplicarFiltro(filtro);
+    }//GEN-LAST:event_ButtonLuminosoActionPerformed
+
+    private void ButtonPolariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPolariActionPerformed
+        Filtro filtro = Polarizado;
+        AplicarFiltro(filtro);
+    }//GEN-LAST:event_ButtonPolariActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAudios;
+    private javax.swing.JButton ButtonBlanNeg;
     private javax.swing.JButton ButtonImagen;
+    private javax.swing.JButton ButtonLuminoso;
     private javax.swing.JButton ButtonMas100;
+    private javax.swing.JButton ButtonNoche;
+    private javax.swing.JButton ButtonPolari;
     private javax.swing.JButton ButtonTodos;
     private javax.swing.JButton ButtonVideos;
     private javax.swing.JTable Table;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JTextField TextFiltro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

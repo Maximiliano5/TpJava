@@ -125,5 +125,15 @@ public class Perfil {
         }
         return lista;
     }
+    public Publicacion BuscaPublicacion(String Nom){
+       int i=0;
+       while(i<pubList.size() && (Nom.compareTo(pubList.get(i).getNombre()))!=0){
+         i++;
+       }
+       if(i<pubList.size())
+         return pubList.get(i);
+       else
+          return null; 
+    }
      
 }

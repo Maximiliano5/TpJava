@@ -246,7 +246,7 @@ public class Pantalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonPubliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPubliActionPerformed
-        PanelPublic P1 = new PanelPublic(imgList,vidList,audList,mas100List,Per.getPubList());
+        PanelPublic P1 = new PanelPublic(Per);
         ShowPanel(P1);
         P1.Carga(Per.getPubList());
     }//GEN-LAST:event_ButtonPubliActionPerformed

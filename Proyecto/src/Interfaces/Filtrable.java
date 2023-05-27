@@ -1,5 +1,7 @@
 package Interfaces;
 
+import Logica.Main.Filtro;
+
 public interface Filtrable {
-    public void Filtro(boolean res);   
+    public boolean AplicarFiltro(Filtro F);   
 }

@@ -8,7 +8,7 @@ public class Imagen extends Publicacion implements Filtrable{
     private int Alto;
     private int Ancho;
     private Boolean Filtro;
-    private Filtro filtroPubli;
+    private Filtro filtroPubli;  //enum
 
     //constructor
     public Imagen(int Resolucion, int Alto, int Ancho, Boolean Filtro, String n, String f, int cant, int e, int com) {
@@ -23,15 +23,13 @@ public class Imagen extends Publicacion implements Filtrable{
 
     //metodo de la interfaz
     @Override
-    public void Filtro(boolean res) //respuesta si poner filtro: sí o no
+    public boolean AplicarFiltro(Filtro F) //respuesta si poner filtro: sí o no
     {
-        if (res)
-        {
-            Filtro=true;
-        } else
-        {
-            Filtro=false;
-        }
+      if(Filtro){
+        filtroPubli = F;
+        return true;
+      }else
+          return false;
     }
 
     //getters
