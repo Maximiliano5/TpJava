@@ -40,11 +40,4 @@ public class Carga {
         
     }
     
-    public void OrdenaDatos(ArrayList<Publicacion> Lista){
-       persOrd = new TreeSet<>(Comparator.comparing(Publicacion::getNombre));
-       persOrd.addAll(Lista);
-       Lista.clear();
-       Lista.addAll(persOrd);
-       persOrd.clear();
-    }
 }

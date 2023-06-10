@@ -87,7 +87,7 @@ public class Album {
             auxAlbum.eliminar();
         }
         subAlbum.clear();
-    }  
+    } 
     public Album buscarAlbum(Album nodoRaiz, String nombreBuscado) {
        if (nodoRaiz.getNombreAlbum().equals(nombreBuscado)) {
            return nodoRaiz;

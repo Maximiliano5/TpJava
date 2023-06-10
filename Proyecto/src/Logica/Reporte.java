@@ -60,10 +60,10 @@ public class Reporte{
 
     return reporte.toString();
 }
-   private static void generarReporteAlbum(Album album, BufferedWriter writer, String fechaInicio, String fechaFin,String reporteGrafico) throws IOException {
+private static void generarReporteAlbum(Album album, BufferedWriter writer, String fechaInicio, String fechaFin,StringBuilder reporteGrafico) throws IOException {
     String nombreAlbum=album.getNombreAlbum();
     writer.write("Álbum: " + nombreAlbum + "\n");
-    reporteGrafico+="Álbum: "+ nombreAlbum +"\n";
+    reporteGrafico.append("Álbum: "+ nombreAlbum +"\n");
     int cantPublicaciones = 0;
     int cantComentarios=0;
     for (Publicacion publicacion : album.getLpubli()) {
@@ -77,8 +77,8 @@ public class Reporte{
             cantComentarios+=cantComentariosxPubli;
         }
     }
-    reporteGrafico+="Cantidad de publicaciones: "+ cantPublicaciones +"\n";
-    reporteGrafico+="Cantidad de comentarios: "+ cantComentarios +"\n";
+    reporteGrafico.append("Cantidad de publicaciones: "+ cantPublicaciones +"\n");
+    reporteGrafico.append("Cantidad de comentarios: "+ cantComentarios +"\n");
     writer.write("Cantidad de publicaciones: " + cantPublicaciones + "\n\n");
 
     List<Album> subAlbums = album.getSubAlbum();
@@ -87,9 +87,10 @@ public class Reporte{
     for (Album subAlbum : subAlbums) {
         generarReporteAlbum(subAlbum, writer, fechaInicio, fechaFin, reporteGrafico);
     }
+    reporteGrafico.toString();
 }
 
-private static String generarReporteAlbumes(String nombreArchivo, List<Album> albumList, String fechaInicio, String fechaFin, String reporteGrafico) {
+private static String generarReporteAlbumes(String nombreArchivo, List<Album> albumList, String fechaInicio, String fechaFin, StringBuilder reporteGrafico) {
     StringBuilder reporte = new StringBuilder();
    
     try {
@@ -121,9 +122,8 @@ private static String generarReporteAlbumes(String nombreArchivo, List<Album> al
 }
 
     //pasarle la lista de album del perfil y la lista de publicaciones filtrada
-    public void reportesAlbum(String fechaInicio, String fechaFin,List<Album> albumList )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
+    public void reportesAlbum(String fechaInicio, String fechaFin,List<Album> albumList,StringBuilder reporteGrafico )//agregar metodo que calcule el promedio pasandole lista de publicaciones y cant
     {
-        String reporteGrafico="";
         System.out.println(generarReporteAlbumes("ReporteAlbumes.txt",albumList,fechaInicio,fechaFin,reporteGrafico));
         System.out.println(reporteGrafico);
     }

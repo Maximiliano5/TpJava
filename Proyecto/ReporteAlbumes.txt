@@ -7,32 +7,38 @@ Cantidad de comentarios: 90
 Publicación: Bosque
 Cantidad de comentarios: 3
 
-Publicación: Cancion
-Cantidad de comentarios: 4
-
 Publicación: Ciudad
 Cantidad de comentarios: 3
 
-Cantidad de publicaciones: 4
+Cantidad de publicaciones: 3
+
+Álbum: ALBUM-Aviones
+Publicación: Comunicado
+Cantidad de comentarios: 2
+
+Publicación: Italia
+Cantidad de comentarios: 20
+
+Cantidad de publicaciones: 2
 
 Álbum: ALBUM-Camiones
+Publicación: Italia
+Cantidad de comentarios: 20
+
 Publicación: Laguna
 Cantidad de comentarios: 4
 
-Cantidad de publicaciones: 1
-
-Álbum: ALBUM-Camionetas
-Publicación: Trabajo
-Cantidad de comentarios: 6
-
-Publicación: Vacaciones
-Cantidad de comentarios: 7
-
-Publicación: Tarde
+Publicación: Mar
 Cantidad de comentarios: 0
 
 Cantidad de publicaciones: 3
 
-Álbum: ALBUM-Motos
-Cantidad de publicaciones: 0
+Álbum: ALBUM-Camionetas
+Publicación: Cancion
+Cantidad de comentarios: 4
+
+Publicación: F1
+Cantidad de comentarios: 900
+
+Cantidad de publicaciones: 2
 

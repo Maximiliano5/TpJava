@@ -85,8 +85,6 @@ public class Audio extends Publicacion implements Durable{
         return "Audio{" +
                 "duracion=" + duracion +
                 ", velbits=" + velbits +
-                ", tiempoAct=" + tiempoact +
-                ", reproduciendo=" + reproduciendo +
                 '}';
     }
 

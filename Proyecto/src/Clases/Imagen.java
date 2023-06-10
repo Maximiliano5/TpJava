@@ -72,7 +72,7 @@ public class Imagen extends Publicacion implements Filtrable{
                 "resolucion=" + Resolucion +
                 ", alto=" + Alto +
                 ", ancho=" + Ancho +
-                ", filtro=" + Filtro +
+                ", filtro=" + filtroPubli +
                 '}';
     }
 }

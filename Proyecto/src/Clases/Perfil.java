@@ -81,13 +81,20 @@ public class Perfil {
     public void setAlbumList(ArrayList<Album> albumList) {
         this.albumList = albumList;
     }  
-    public void eliminar()//elimina de forma recursiva los subalbumes
-     {
-        for (Album auxAlbum:albumList) {
-            auxAlbum.eliminar();
+   // public void eliminarAlbum(String nombre) {
+   //     Album albumEliminar = buscarAlbum(this, nombre);
+   //     if (albumEliminar != null) {
+   //         eliminarAlbumRecursivo(albumEliminar);
+   //     }
+   // }
+
+    private void eliminarAlbumRecursivo(Album album) {
+        pubList.removeAll(album.getLpubli());
+        for (Album subAlbum : album.getSubAlbum()) {
+            eliminarAlbumRecursivo(subAlbum);
         }
-        albumList.clear();
-    }  
+        albumList.remove(album);
+    }
     public void filtraPubli(ArrayList<Imagen> imgList,ArrayList<Video> vidList, ArrayList<Audio> audList)
     {
         for(Publicacion auxp:pubList)
@@ -135,5 +142,7 @@ public class Perfil {
        else
           return null; 
     }
+
+  
      
 }
